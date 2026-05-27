@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quanto costa un corso e-learning? Prima rispondi a questa domanda — Chiara Bandelloni</title>
+<meta name="description" content="Quando un cliente chiede 'quanto costa un corso e-learning?' spesso sta saltando la fase più importante: la diagnosi del problema. Ecco perché, e cosa chiedere prima.">
+<link rel="canonical" href="https://chiarabandelloni.it/blog/quanto-costa-corso-elearning-domanda-sbagliata">
+<link rel="stylesheet" href="../fonts/fonts.css">
+<link rel="stylesheet" href="../search.css">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --yellow:      #ffc62a;
+  --yellow-pale: #fff8e1;
+  --brown:       #1c1208;
+  --warm-white:  #faf8f3;
+  --cream:       #f2ece0;
+  --muted:       #6b5f4e;
+  --border:      #e4d9c8;
+  --dark-bg:     #1a1008;
+  --serif:       'DM Serif Display', Georgia, serif;
+  --sans:        'DM Sans', system-ui, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--sans);
+  background: var(--warm-white);
+  color: var(--brown);
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── NAV ── */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: var(--warm-white);
+  border-bottom: 1px solid var(--border);
+  padding: 0 52px;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-logo { font-family: var(--serif); font-size: 1.15rem; font-weight: 400; color: var(--brown); text-decoration: none; letter-spacing: -0.01em; }
+.nav-logo em { font-style: italic; color: var(--muted); }
+.nav-logo-sym { color: var(--yellow); padding: 0 2px; font-style: normal; font-size: 0.82em; vertical-align: middle; }
+.nav-right { display: flex; align-items: center; gap: 28px; }
+.nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+.nav-links a { font-size: 0.83rem; font-weight: 500; color: var(--muted); text-decoration: none; letter-spacing: 0.03em; transition: color 0.2s; }
+.nav-links a:hover, .nav-links a.active { color: var(--brown); font-weight: 600; }
+.nav-social { display: flex; align-items: center; gap: 14px; }
+.nav-social-link { color: rgba(28,18,8,0.4); display: flex; align-items: center; text-decoration: none; transition: color 0.2s; }
+.nav-social-link:hover { color: var(--brown); }
+.nav-cta { background: var(--yellow); color: var(--brown); font-size: 0.8rem; font-weight: 700; padding: 9px 20px; border-radius: 100px; text-decoration: none; transition: background 0.2s; white-space: nowrap; }
+.nav-cta:hover { background: var(--brown); color: var(--yellow); }
+
+/* ── POST HEADER ── */
+.post-header {
+  background: var(--yellow);
+  padding: 64px 52px 72px;
+}
+.post-header-inner { max-width: 720px; margin: 0 auto; }
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: rgba(28,18,8,0.5);
+  text-decoration: none;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+  transition: color 0.2s;
+}
+.back-link:hover { color: var(--brown); }
+.post-category {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(28,18,8,0.45);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.post-category::before {
+  content: '';
+  display: block;
+  width: 24px; height: 2px;
+  background: rgba(28,18,8,0.3);
+  flex-shrink: 0;
+}
+h1 {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  color: var(--brown);
+  margin-bottom: 20px;
+}
+.post-meta {
+  font-size: 0.8rem;
+  color: rgba(28,18,8,0.45);
+  font-weight: 500;
+}
+
+/* ── POST VISUAL ── */
+.post-visual {
+  background: var(--cream);
+  border-bottom: 1px solid var(--border);
+  padding: 52px 52px 56px;
+}
+.post-visual-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+.post-visual-bar {
+  width: 3px;
+  background: var(--yellow);
+  flex-shrink: 0;
+  align-self: stretch;
+  border-radius: 2px;
+  min-height: 60px;
+}
+.post-visual-quote {
+  font-family: var(--serif);
+  font-size: clamp(1.35rem, 2.2vw, 1.85rem);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.45;
+  color: var(--brown);
+}
+
+/* ── POST BODY ── */
+.post-body {
+  padding: 64px 52px 80px;
+}
+.post-body-inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* prose */
+.prose p {
+  margin-bottom: 22px;
+  font-size: 1.02rem;
+  line-height: 1.8;
+  color: var(--brown);
+}
+.prose p:last-child { margin-bottom: 0; }
+
+.prose h2 {
+  font-family: var(--serif);
+  font-size: clamp(1.4rem, 2vw, 1.75rem);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--brown);
+  margin: 52px 0 18px;
+}
+.prose h3 {
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--brown);
+  margin: 36px 0 14px;
+}
+
+.prose strong { font-weight: 600; color: var(--brown); }
+.prose em { font-style: italic; }
+
+.prose hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 44px 0;
+}
+
+.prose ul, .prose ol {
+  margin: 0 0 22px 0;
+  padding-left: 0;
+  list-style: none;
+}
+.prose ul li, .prose ol li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 10px;
+  font-size: 1.02rem;
+  line-height: 1.75;
+  color: var(--brown);
+}
+.prose ul li::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 12px;
+  width: 6px; height: 6px;
+  background: var(--yellow);
+  border-radius: 50%;
+}
+.prose ol { counter-reset: prose-counter; }
+.prose ol li { counter-increment: prose-counter; }
+.prose ol li::before {
+  content: counter(prose-counter) ".";
+  position: absolute;
+  left: 0;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--yellow);
+  top: 2px;
+}
+
+.prose a {
+  color: var(--brown);
+  text-decoration: underline;
+  text-decoration-color: var(--yellow);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.2s;
+}
+.prose a:hover { text-decoration-color: var(--brown); }
+
+/* domanda in evidenza */
+.prose .question-block {
+  background: var(--yellow-pale);
+  border-left: 3px solid var(--yellow);
+  padding: 20px 24px;
+  margin: 28px 0;
+  border-radius: 0 8px 8px 0;
+}
+.prose .question-block p { margin: 0; font-weight: 500; }
+
+/* ── RELATED / CTA ── */
+.post-related {
+  background: var(--cream);
+  border-top: 1px solid var(--border);
+  padding: 56px 52px;
+}
+.post-related-inner { max-width: 720px; margin: 0 auto; }
+.related-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+.related-label::before {
+  content: '';
+  display: block;
+  width: 24px; height: 2px;
+  background: var(--yellow);
+  flex-shrink: 0;
+}
+.related-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 24px;
+  background: var(--warm-white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.related-card:hover {
+  border-color: rgba(255,198,42,0.5);
+  box-shadow: 0 6px 24px rgba(28,18,8,0.06);
+}
+.related-arrow {
+  width: 36px; height: 36px;
+  background: var(--yellow);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.related-content {}
+.related-tag {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+.related-title {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  font-weight: 400;
+  line-height: 1.25;
+  color: var(--brown);
+}
+
+/* ── POST CTA ── */
+.post-cta {
+  padding: 72px 52px;
+  text-align: center;
+  border-top: 1px solid var(--border);
+}
+.post-cta-inner { max-width: 500px; margin: 0 auto; }
+.cta-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+.cta-title {
+  font-family: var(--serif);
+  font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--brown);
+  margin-bottom: 16px;
+}
+.cta-title em { font-style: italic; color: var(--muted); }
+.cta-body {
+  font-size: 0.92rem;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--brown);
+  color: var(--yellow);
+  padding: 12px 28px;
+  border-radius: 100px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.btn-primary:hover { background: var(--yellow); color: var(--brown); }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--dark-bg);
+  padding: 40px 52px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.footer-logo { font-family: var(--serif); font-size: 1.05rem; color: rgba(255,255,255,0.65); text-decoration: none; }
+.footer-logo em { font-style: italic; color: rgba(255,255,255,0.35); }
+.footer-logo-sym { color: var(--yellow); padding: 0 2px; font-style: normal; font-size: 0.82em; vertical-align: middle; }
+.footer-links { display: flex; gap: 24px; list-style: none; }
+.footer-links a { font-size: 0.78rem; color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: rgba(255,255,255,0.75); }
+.footer-social { display: flex; align-items: center; gap: 16px; }
+.footer-social-link { color: rgba(255,255,255,0.35); display: flex; align-items: center; text-decoration: none; transition: color 0.2s; }
+.footer-social-link:hover { color: rgba(255,255,255,0.85); }
+
+/* ── HAMBURGER ── */
+.nav-hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 6px 2px; -webkit-tap-highlight-color: transparent; }
+.nav-hamburger span { display: block; width: 22px; height: 2px; background: var(--brown); border-radius: 2px; transition: transform 0.28s ease, opacity 0.28s ease; transform-origin: center; }
+.nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; }
+.nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+  nav { padding: 0 24px; }
+  .post-header { padding: 48px 32px 56px; }
+  .post-body { padding: 48px 32px 64px; }
+  .post-related { padding: 48px 32px; }
+  .post-cta { padding: 56px 32px; }
+  footer { padding: 32px; }
+}
+@media (max-width: 640px) {
+  nav { padding: 0 20px; height: 60px; }
+  .nav-hamburger { display: flex; }
+  .nav-social { display: none; }
+  .nav-links { display: none; position: fixed; top: 60px; left: 0; right: 0; flex-direction: column; gap: 0; background: var(--warm-white); border-bottom: 1px solid var(--border); padding: 8px 0 16px; box-shadow: 0 8px 24px rgba(28,18,8,0.08); z-index: 99; }
+  .nav-links.open { display: flex; }
+  .nav-links li { border-bottom: 1px solid var(--border); }
+  .nav-links li:last-child { border-bottom: none; }
+  .nav-links a { display: block; padding: 14px 20px; font-size: 0.92rem; color: var(--brown); }
+  .post-header { padding: 36px 20px 48px; }
+  .post-body { padding: 40px 20px 56px; }
+  .post-related { padding: 40px 20px; }
+  .post-cta { padding: 48px 20px; }
+  footer { padding: 28px 20px; flex-direction: column; align-items: flex-start; gap: 16px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <a href="../index.html" class="nav-logo"><em>Chiara</em><span class="nav-logo-sym">◆</span>Bandelloni</a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="../index.html#consulenza">Consulenza</a></li>
+      <li><a href="https://chiarabandelloni.substack.com/" target="_blank" rel="noopener">Webtelling</a></li>
+      <li><a href="../index.html#portfolio">Portfolio</a></li>
+      <li><a href="index.html" class="active">Blog</a></li>
+    </ul>
+    <div class="nav-social">
+      <a href="https://www.linkedin.com/in/chiarabandelloni/" target="_blank" rel="noopener" class="nav-social-link" aria-label="LinkedIn">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      </a>
+      <a href="https://www.youtube.com/@webtelling" target="_blank" rel="noopener" class="nav-social-link" aria-label="YouTube">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+      </a>
+    </div>
+    <a href="../contattami.html" class="nav-cta">Contattami</a>
+    <button class="nav-search-btn" aria-label="Cerca nel sito">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    </button>
+    <button class="nav-hamburger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ── POST HEADER ── -->
+<div class="post-header">
+  <div class="post-header-inner">
+    <a href="index.html" class="back-link">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      Blog
+    </a>
+    <p class="post-category">Formazione aziendale</p>
+    <h1>Quanto costa un corso e-learning?<br>La domanda (spesso) sbagliata</h1>
+    <p class="post-meta">Lettura: ~5 minuti</p>
+  </div>
+</div>
+
+<!-- ── POST VISUAL ── -->
+<div class="post-visual">
+  <div class="post-visual-inner">
+    <div class="post-visual-bar"></div>
+    <p class="post-visual-quote">Il corso è la risposta giusta solo se prima fai le domande giuste.</p>
+  </div>
+</div>
+
+<!-- ── POST BODY ── -->
+<div class="post-body">
+  <div class="post-body-inner">
+    <div class="prose">
+
+      <p>C'è una domanda che chi fa il nostro lavoro riceve in modo ricorrente: "Quanto costa fare questo corso?"</p>
+
+      <p>Impostata in questo modo, la richiesta presuppone che il corso sia già ben delineato, con contenuti definiti e obiettivi chiari. Noi dobbiamo solo costruirlo.</p>
+
+      <p>Il problema è che non è quasi mai così.</p>
+
+      <hr>
+
+      <h2>Quando la domanda è quella giusta</h2>
+
+      <p>A volte è esattamente così, penso a tutti i contenuti che rientrano nell'ambito della formazione obbligatoria: leggi, sicurezza, temi noti e ricorrenti, con requisiti precisi e perimetri già definiti.</p>
+
+      <p>Se un'azienda deve formare tutto il personale su GDPR, antiriciclaggio o sicurezza sul lavoro, i requisiti li definisce la legge. L'obiettivo è chiaro, il contenuto è disponibile, la <strong>progettazione e-learning</strong> ha senso per ragioni di scalabilità e tracciabilità. In questi casi chiedere il preventivo è la mossa giusta.</p>
+
+      <hr>
+
+      <h2>Quando invece nasconde qualcosa d'altro</h2>
+
+      <p>Più spesso, però, questa domanda nasconde qualcosa di diverso, come un problema non ancora del tutto inquadrato, un obiettivo vago, una necessità reale che un <strong>corso e-learning</strong> potrebbe soddisfare oppure no.</p>
+
+      <p>Somigliano a: "Vogliamo formare i nostri manager sulla leadership." Oppure: "Il nostro team commerciale non vende bene, facciamo un corso." O: "Abbiamo un problema con l'onboarding, vogliamo strutturare qualcosa di digitale."</p>
+
+      <p>Questi non sono requisiti. Sono punti di partenza per una diagnosi.</p>
+
+      <hr>
+
+      <h2>Le domande che faccio prima di qualsiasi altra cosa</h2>
+
+      <p>In questi casi la cosa più utile da fare non è iniziare a produrre, ma fare le domande giuste prima di qualsiasi altro passo. Capire cosa succede davvero in quell'azienda, cosa le persone dovrebbero saper fare di diverso dopo e se un corso sia effettivamente lo strumento più adatto per arrivarci.</p>
+
+      <p>Le domande che faccio sistematicamente:</p>
+
+      <div class="question-block">
+        <p><strong>"Cosa succede oggi che non dovrebbe succedere?"</strong></p>
+      </div>
+      <p>Cosa si osserva concretamente: errori, rallentamenti, reclami, turnover, situazioni che si ripetono. I sintomi prima della diagnosi.</p>
+
+      <div class="question-block">
+        <p><strong>"Cosa dovrebbero fare le persone in modo diverso, dopo?"</strong></p>
+      </div>
+      <p>Non capire meglio qualcosa. Fare qualcosa di diverso, in modo osservabile. Se non si riesce a descriverlo, il quadro non è ancora pronto.</p>
+
+      <div class="question-block">
+        <p><strong>"Sai già perché non lo fanno?"</strong></p>
+      </div>
+      <p>Mancanza di conoscenza? Di strumenti? Di tempo? Di motivazione? La formazione risolve solo il primo. Se il blocco è altrove, un corso non cambia nulla.</p>
+
+      <div class="question-block">
+        <p><strong>"Hai dati su quello che vuoi risolvere?"</strong></p>
+      </div>
+      <p>I clienti hanno quasi sempre le informazioni che servono: report, feedback, osservazioni. Non le hanno ancora lette come diagnosi. A volte basta unire i puntini.</p>
+
+      <hr>
+
+      <h2>Quando il corso e-learning non è la risposta</h2>
+
+      <p>A volte l'esito è comunque un corso ben progettato. In altre circostanze però sarà una guida, una serie di interventi più mirati o una conversazione onesta con il cliente, che vale più di qualsiasi contenuto digitale.</p>
+
+      <p>Mi è capitato di lavorare su casi in cui il vero problema era una procedura scritta male, non una competenza mancante. La soluzione era riscrivere il documento. Non fare formazione.</p>
+
+      <p>Mi è capitato di trovare persone che sapevano già cosa fare, ma il sistema non lo permetteva. Nessun corso avrebbe risolto quel problema.</p>
+
+      <p>E mi è capitato di suggerire un affiancamento invece di un e-learning, perché il contenuto c'era già ma mancava la pratica guidata.</p>
+
+      <p>Dire queste cose non fa perdere il cliente. In molti casi guadagna fiducia. E da lì la conversazione può andare da un'altra parte: una consulenza, un workshop, una riprogettazione di processo.</p>
+
+      <hr>
+
+      <h2>Il valore della diagnosi</h2>
+
+      <p>Non sto dicendo che i corsi e-learning non funzionino. Credo nello strumento e ci lavoro da anni.</p>
+
+      <p>Sto dicendo che usarlo senza una diagnosi è uno spreco: di risorse, e soprattutto di tempo delle persone che quella formazione la dovranno seguire.</p>
+
+      <p>Quante volte avete progettato un corso nato da una diagnosi vera del problema, anziché da una risposta quasi automatica alla richiesta?</p>
+
+    </div>
+  </div>
+</div>
+
+<!-- ── RELATED ── -->
+<div class="post-related">
+  <div class="post-related-inner">
+    <p class="related-label">Leggi anche</p>
+    <a href="misurare-efficacia-formazione-baseline.html" class="related-card">
+      <div class="related-arrow">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </div>
+      <div class="related-content">
+        <p class="related-tag">Formazione aziendale · ~6 min</p>
+        <p class="related-title">Una volta capito il problema da risolvere, il passo successivo è misurare da dove parti: senza quel dato, anche il corso più ben fatto non sa se ha funzionato.</p>
+      </div>
+    </a>
+  </div>
+</div>
+
+<!-- ── CTA ── -->
+<div class="post-cta">
+  <div class="post-cta-inner">
+    <p class="cta-label">parliamo</p>
+    <h2 class="cta-title">Hai un progetto<br><em>da analizzare?</em></h2>
+    <p class="cta-body">Vuoi confrontarti su un progetto specifico, capire se un corso ha senso o cosa manca prima di partire? Puoi scrivermi direttamente.</p>
+    <a href="../contattami.html" class="btn-primary">Scrivimi →</a>
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <a href="../index.html" class="footer-logo"><em>Chiara</em><span class="footer-logo-sym">◆</span>Bandelloni</a>
+  <ul class="footer-links">
+    <li><a href="../index.html#consulenza">Consulenza</a></li>
+    <li><a href="../index.html#portfolio">Portfolio</a></li>
+    <li><a href="index.html">Blog</a></li>
+    <li><a href="../contattami.html">Contattami</a></li>
+  </ul>
+  <div class="footer-social">
+    <a href="https://www.linkedin.com/in/chiarabandelloni/" target="_blank" rel="noopener" class="footer-social-link" aria-label="LinkedIn">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+    </a>
+    <a href="https://www.youtube.com/@webtelling" target="_blank" rel="noopener" class="footer-social-link" aria-label="YouTube">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+    </a>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var btn = document.querySelector('.nav-hamburger');
+  var menu = document.querySelector('.nav-links');
+  if (!btn || !menu) return;
+  btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    var open = btn.classList.toggle('open');
+    menu.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open);
+  });
+  document.addEventListener('click', function(e){
+    if (!btn.contains(e.target) && !menu.contains(e.target)){
+      btn.classList.remove('open');
+      menu.classList.remove('open');
+      btn.setAttribute('aria-expanded','false');
+    }
+  });
+  menu.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      btn.classList.remove('open');
+      menu.classList.remove('open');
+      btn.setAttribute('aria-expanded','false');
+    });
+  });
+})();
+</script>
+<script src="../search.js"></script>
+</body>
+</html>

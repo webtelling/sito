@@ -1,0 +1,1450 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proposta Mix — Chiara Bandelloni</title>
+<link rel="stylesheet" href="fonts/fonts.css">
+<link rel="stylesheet" href="search.css">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --yellow:        #ffc62a;
+  --yellow-pale:   #fff8e1;
+  --yellow-mid:    #ffd966;
+  --brown:         #1c1208;
+  --warm-white:    #faf8f3;
+  --cream:         #f2ece0;
+  --muted:         #6b5f4e;
+  --border:        #e4d9c8;
+  --sage:          #5f7057;
+  --dark-bg:       #1a1008;
+  --serif:         'DM Serif Display', Georgia, serif;
+  --sans:          'DM Sans', system-ui, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--sans);
+  background: var(--warm-white);
+  color: var(--brown);
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─────────────────────────────────────────
+   NAV
+───────────────────────────────────────── */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: var(--warm-white);
+  border-bottom: 1px solid var(--border);
+  padding: 0 52px;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: var(--brown);
+  text-decoration: none;
+  letter-spacing: -0.01em;
+}
+.nav-logo em { font-style: italic; color: var(--muted); font-weight: 400; }
+.nav-logo-sym { color: var(--yellow); padding: 0 2px; font-style: normal; font-size: 0.82em; vertical-align: middle; }
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 0.83rem;
+  font-weight: 500;
+  color: var(--muted);
+  text-decoration: none;
+  letter-spacing: 0.03em;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--brown); }
+
+.nav-pill a {
+  background: var(--yellow);
+  color: var(--brown) !important;
+  padding: 8px 18px;
+  border-radius: 100px;
+  font-weight: 700;
+  font-size: 0.8rem;
+  transition: background 0.2s !important;
+}
+.nav-pill a:hover { background: var(--brown) !important; color: var(--yellow) !important; }
+
+.nav-cta {
+  background: var(--yellow);
+  color: var(--brown);
+  padding: 8px 18px;
+  border-radius: 100px;
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.2s, color 0.2s;
+}
+.nav-cta:hover { background: var(--brown); color: var(--yellow); }
+
+/* ─────────────────────────────────────────
+   HERO — giallo impattante P3 + griglia P1
+───────────────────────────────────────── */
+.hero {
+  background: var(--yellow);
+  min-height: calc(100vh - 68px);
+  display: flex;
+  align-items: stretch;
+}
+
+.hero-inner {
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 52px;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  align-items: center;
+}
+
+.hero-left {
+  padding: 80px 52px 80px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(28,18,8,0.6);
+  margin-bottom: 32px;
+}
+.eyebrow::before {
+  content: '';
+  display: block;
+  width: 28px; height: 2px;
+  background: rgba(28,18,8,0.35);
+  flex-shrink: 0;
+}
+
+.hero-title {
+  font-family: var(--serif);
+  font-size: clamp(2.8rem, 4.5vw, 4.2rem);
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+  color: var(--brown);
+  margin-bottom: 28px;
+}
+
+.hero-title em {
+  font-style: italic;
+  font-weight: 400;
+  color: rgba(28,18,8,0.55);
+}
+
+.hero-title .highlight {
+  font-style: italic;
+  color: var(--brown);
+  position: relative;
+  display: inline-block;
+}
+/* sottolineatura scura su fondo giallo */
+.hero-title .highlight::after {
+  content: '';
+  position: absolute;
+  bottom: 4px; left: 0; right: 0;
+  height: 6px;
+  background: rgba(28,18,8,0.18);
+  z-index: -1;
+  border-radius: 2px;
+}
+
+.hero-desc {
+  font-size: 1.05rem;
+  color: rgba(28,18,8,0.65);
+  line-height: 1.75;
+  max-width: 440px;
+  margin-bottom: 44px;
+}
+
+.hero-actions {
+  display: flex; gap: 12px; flex-wrap: wrap;
+  margin-bottom: 48px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  font-family: var(--sans);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 2px solid transparent;
+  border-radius: 100px;
+  transition: all 0.22s;
+  cursor: pointer;
+}
+.btn-primary {
+  background: var(--brown);
+  color: var(--yellow);
+  border-color: var(--brown);
+}
+.btn-primary:hover { background: transparent; color: var(--brown); border-color: var(--brown); }
+
+.btn-outline {
+  background: rgba(255,255,255,0.45);
+  color: var(--brown);
+  border-color: rgba(28,18,8,0.2);
+}
+.btn-outline:hover { background: rgba(255,255,255,0.7); border-color: var(--brown); }
+
+.btn-ghost {
+  background: transparent;
+  color: var(--muted);
+  border-color: transparent;
+  padding-left: 0; padding-right: 0;
+}
+.btn-ghost:hover { color: var(--brown); }
+
+.hero-tools {
+  display: flex; flex-wrap: wrap; gap: 7px;
+}
+
+.tool-tag {
+  background: rgba(255,255,255,0.5);
+  border: 1px solid rgba(28,18,8,0.12);
+  padding: 4px 11px;
+  border-radius: 100px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: rgba(28,18,8,0.65);
+}
+
+.hero-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 52px 0 52px 52px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ornamento circolare SVG di sfondo */
+.hero-bg-shape {
+  position: absolute;
+  top: -60px; right: -60px;
+  width: 360px; height: 360px;
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.hero-photo-slot {
+  width: 260px;
+  aspect-ratio: 3 / 4;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 24px 64px rgba(28,18,8,0.18);
+}
+
+.hero-photo-slot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.hero-pull {
+  border-left: 3px solid rgba(28,18,8,0.3);
+  padding: 22px 24px;
+  background: rgba(255,255,255,0.65);
+  border-radius: 0 10px 10px 0;
+  backdrop-filter: blur(4px);
+}
+
+.hero-pull blockquote {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--brown);
+  line-height: 1.55;
+  margin-bottom: 10px;
+}
+
+.hero-pull cite {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-style: normal;
+}
+
+/* btn-outline fuori dalla hero: aspetto normale su sfondo chiaro */
+.section .btn-outline,
+.portfolio-section .btn-outline,
+.cta-section .btn-outline {
+  background: transparent;
+  border-color: var(--border);
+}
+.section .btn-outline:hover,
+.portfolio-section .btn-outline:hover,
+.cta-section .btn-outline:hover {
+  background: transparent;
+  border-color: var(--brown);
+}
+
+/* btn-yellow su sfondo chiaro: hover con testo scuro */
+.portfolio-section .btn-yellow:hover,
+.cta-section .btn-yellow:hover {
+  background: transparent;
+  color: var(--brown);
+  border-color: var(--brown);
+}
+
+/* ─────────────────────────────────────────
+   SERVIZI
+───────────────────────────────────────── */
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 48px;
+}
+
+.service-card {
+  background: var(--warm-white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 48px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.22s, box-shadow 0.22s;
+}
+.service-card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--yellow);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s;
+}
+.service-card:hover::after { transform: scaleX(1); }
+.service-card:hover {
+  border-color: rgba(255,198,42,0.35);
+  box-shadow: 0 12px 40px rgba(28,18,8,0.07);
+}
+
+.service-num {
+  font-family: var(--serif);
+  font-size: 3.5rem;
+  line-height: 1;
+  color: var(--border);
+  font-style: italic;
+  transition: color 0.22s;
+}
+.service-card:hover .service-num { color: var(--yellow); }
+
+.service-tag {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.service-tag::before {
+  content: '';
+  display: block;
+  width: 18px; height: 2px;
+  background: var(--yellow);
+  flex-shrink: 0;
+}
+
+.service-title {
+  font-family: var(--serif);
+  font-size: 1.45rem;
+  line-height: 1.2;
+  color: var(--brown);
+}
+
+.service-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  flex: 1;
+  padding-top: 8px;
+  border-top: 1px solid var(--border);
+}
+
+.service-list li {
+  font-size: 0.92rem;
+  color: var(--brown);
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  line-height: 1.55;
+}
+.service-list li::before {
+  content: '';
+  display: block;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--yellow);
+  flex-shrink: 0;
+  margin-top: 6px;
+}
+
+/* ─────────────────────────────────────────
+   COSA FACCIO
+───────────────────────────────────────── */
+.section {
+  padding: 96px 52px;
+}
+
+.container { max-width: 1100px; margin: 0 auto; }
+
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+.section-label::before {
+  content: '';
+  display: block;
+  width: 22px; height: 2px;
+  background: var(--yellow);
+  flex-shrink: 0;
+}
+
+.section-title {
+  font-family: var(--serif);
+  font-size: clamp(1.4rem, 1.8vw, 1.8rem);
+  font-weight: 600;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  color: var(--brown);
+  margin-bottom: 24px;
+}
+.section-title em { font-style: italic; font-weight: 400; color: var(--muted); }
+
+.section-body {
+  font-size: 1rem;
+  color: var(--muted);
+  line-height: 1.75;
+}
+.section-body p + p { margin-top: 14px; }
+
+/* ornamento divisorio */
+.ornament {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 0 52px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.ornament-line { flex: 1; height: 1px; background: var(--border); }
+.ornament-shape {
+  width: 8px; height: 8px;
+  background: var(--yellow);
+  border-radius: 2px;
+  transform: rotate(45deg);
+  flex-shrink: 0;
+}
+
+/* step list — P1 layout + P3 badge style */
+.step-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.step-item {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  gap: 16px;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--border);
+  align-items: start;
+}
+.step-item:first-child { border-top: 1px solid var(--border); }
+
+.step-badge {
+  width: 32px; height: 32px;
+  background: var(--yellow);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--serif);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--brown);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.step-content h4 {
+  font-family: var(--sans);
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--brown);
+  margin-bottom: 5px;
+}
+
+.step-content p {
+  font-size: 0.87rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* ─────────────────────────────────────────
+   WEBTELLING — dark warm (P1 struct + P3 warmth)
+───────────────────────────────────────── */
+.webtelling-section {
+  background: var(--dark-bg);
+  color: #fff;
+  padding: 96px 52px;
+}
+
+.webtelling-section .section-label { color: rgba(255,255,255,0.4); }
+.webtelling-section .section-label::before { background: var(--yellow); }
+
+.wt-title {
+  font-family: var(--serif);
+  font-size: clamp(1.6rem, 2.2vw, 2.2rem);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: #fff;
+  margin-bottom: 0;
+}
+.wt-title em { font-style: italic; font-weight: 400; color: var(--yellow); }
+
+.wt-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+  margin-top: 56px;
+}
+
+.wt-body {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.92);
+  line-height: 1.8;
+  margin-bottom: 36px;
+}
+.wt-body p + p { margin-top: 14px; }
+
+.btn-yellow {
+  background: var(--yellow);
+  color: var(--brown);
+  border-color: var(--yellow);
+  border-radius: 100px;
+}
+.btn-yellow:hover { background: transparent; color: var(--yellow); }
+
+.wt-channels {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.wt-channel {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 20px;
+  background: var(--yellow-pale);
+  border: 1px solid rgba(255,198,42,0.35);
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--brown);
+  transition: background 0.2s, border-color 0.2s;
+}
+.wt-channel:hover {
+  background: var(--yellow-mid);
+  border-color: var(--yellow);
+}
+
+.wt-ch-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--yellow);
+  flex-shrink: 0;
+}
+
+.wt-ch-name {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--brown);
+  flex: 1;
+}
+
+.wt-ch-arrow { color: rgba(28,18,8,0.35); transition: color 0.2s; }
+.wt-channel:hover .wt-ch-arrow { color: var(--brown); }
+
+/* ─────────────────────────────────────────
+   PORTFOLIO
+───────────────────────────────────────── */
+.portfolio-section {
+  background: var(--warm-white);
+  padding: 96px 52px;
+}
+
+.portfolio-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: end;
+  margin-bottom: 52px;
+}
+
+.portfolio-header p {
+  font-size: 0.95rem;
+  color: var(--muted);
+  text-align: right;
+  line-height: 1.65;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.p-card {
+  background: var(--warm-white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 40px 36px;
+  text-decoration: none;
+  color: var(--brown);
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.22s, box-shadow 0.22s, transform 0.22s;
+  position: relative;
+  overflow: hidden;
+}
+
+.p-card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--yellow);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s;
+}
+.p-card:hover::after { transform: scaleX(1); }
+.p-card:hover {
+  border-color: rgba(255,198,42,0.35);
+  box-shadow: 0 12px 40px rgba(28,18,8,0.07);
+}
+
+.p-card-cat {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--brown);
+  background: var(--yellow);
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 100px;
+  margin-bottom: 24px;
+  align-self: flex-start;
+}
+
+.p-card-title {
+  font-family: var(--serif);
+  font-size: 1.3rem;
+  font-weight: 400;
+  line-height: 1.25;
+  margin-bottom: 16px;
+}
+
+.p-card-desc {
+  font-size: 0.875rem;
+  color: var(--muted);
+  line-height: 1.65;
+  flex: 1;
+  margin-bottom: 28px;
+}
+
+.p-card-link {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--brown);
+  letter-spacing: 0.01em;
+}
+
+/* ─────────────────────────────────────────
+   BLOG PREVIEW
+───────────────────────────────────────── */
+.blog-section {
+  background: var(--warm-white);
+  padding: 96px 52px;
+}
+
+/* blog preview cards — solo titolo + link */
+.blog-section .p-card-title {
+  font-size: clamp(1.2rem, 1.7vw, 1.55rem);
+  flex: 1;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 52px;
+}
+
+.blog-section-footer {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+/* ─────────────────────────────────────────
+   CTA BANNER
+───────────────────────────────────────── */
+.cta-section {
+  padding: 96px 52px;
+  text-align: center;
+}
+.cta-section::before {
+  content: '';
+  display: block;
+  width: 320px;
+  height: 1px;
+  margin: 0 auto 80px;
+  background: linear-gradient(90deg, transparent, var(--border) 30%, var(--border) 70%, transparent);
+}
+
+.cta-inner { max-width: 580px; margin: 0 auto; }
+
+.cta-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--yellow-pale);
+  border: 1px solid rgba(255,198,42,0.3);
+  border-radius: 100px;
+  padding: 5px 14px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 24px;
+}
+
+.cta-title {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 3.5vw, 3.2rem);
+  font-weight: 600;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  color: var(--brown);
+  margin-bottom: 18px;
+}
+.cta-title em { font-style: italic; font-weight: 400; }
+
+.cta-body {
+  font-size: 1rem;
+  color: var(--muted);
+  line-height: 1.75;
+  margin-bottom: 36px;
+}
+
+.cta-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* ─────────────────────────────────────────
+   FOOTER
+───────────────────────────────────────── */
+footer {
+  background: var(--brown);
+  padding: 40px 52px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-logo {
+  font-family: var(--serif);
+  font-size: 1rem;
+  color: rgba(255,255,255,0.65);
+  text-decoration: none;
+  font-weight: 400;
+}
+.footer-logo em { font-style: italic; color: rgba(255,255,255,0.35); font-weight: 400; }
+.footer-logo-sym { color: var(--yellow); padding: 0 2px; font-style: normal; font-size: 0.82em; vertical-align: middle; }
+
+.footer-links {
+  display: flex; gap: 24px; list-style: none;
+}
+.footer-links a {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.3);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-links a:hover { color: #fff; }
+
+.footer-copy {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.2);
+}
+
+/* ─────────────────────────────────────────
+   NOTA PROPOSTA
+───────────────────────────────────────── */
+.proposal-note {
+  position: fixed;
+  top: 20px; left: 50%;
+  transform: translateX(-50%);
+  background: var(--brown);
+  color: var(--yellow);
+  padding: 8px 20px;
+  border-radius: 100px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  z-index: 999;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  pointer-events: none;
+  font-family: var(--sans);
+  white-space: nowrap;
+}
+
+/* ── SOCIAL ICONS NAV ── */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.nav-social {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-left: 20px;
+  border-left: 1px solid var(--border);
+}
+.nav-social-link {
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  transition: color 0.2s;
+}
+.nav-social-link:hover { color: var(--brown); }
+
+/* ── FOOTER SOCIAL ── */
+.footer-social {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.footer-social-link {
+  color: rgba(255,255,255,0.4);
+  display: flex;
+  align-items: center;
+  transition: color 0.2s;
+}
+.footer-social-link:hover { color: rgba(255,255,255,0.85); }
+
+/* ── HAMBURGER ── */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px 2px;
+  -webkit-tap-highlight-color: transparent;
+}
+.nav-hamburger span {
+  display: block;
+  width: 22px; height: 2px;
+  background: var(--brown);
+  border-radius: 2px;
+  transition: transform 0.28s ease, opacity 0.28s ease;
+  transform-origin: center;
+}
+.nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; }
+.nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ─────────────────────────────────────────
+   RESPONSIVE — TABLET (max 1024px)
+───────────────────────────────────────── */
+@media (max-width: 1024px) {
+  nav { padding: 0 24px; gap: 16px; }
+  .nav-links { gap: 16px; }
+  .nav-links a { font-size: 0.75rem; }
+  .nav-pill a { padding: 7px 14px; }
+
+  .hero { max-height: none; }
+  .hero-inner { padding: 0 32px; }
+  .hero-left { padding: 60px 32px 60px 0; }
+  .hero-right { padding: 40px 0 40px 32px; }
+  .hero-photo-slot { width: 220px; }
+
+  .section { padding: 72px 32px; }
+  .webtelling-section { padding: 72px 32px; }
+  .portfolio-section { padding: 72px 32px; }
+  .blog-section { padding: 72px 32px; }
+  .cta-section { padding: 72px 32px; }
+  footer { padding: 32px; }
+  .ornament { padding: 0 32px; }
+
+  .two-col { gap: 48px; }
+  .wt-layout { gap: 48px; }
+}
+
+/* ─────────────────────────────────────────
+   RESPONSIVE — MOBILE (max 768px)
+───────────────────────────────────────── */
+@media (max-width: 640px) {
+
+  /* Nav */
+  nav { padding: 0 20px; height: 60px; }
+  .nav-hamburger { display: flex; }
+  .nav-links {
+    display: none;
+    position: fixed;
+    top: 60px; left: 0; right: 0;
+    flex-direction: column;
+    gap: 0;
+    background: var(--warm-white);
+    border-bottom: 1px solid var(--border);
+    padding: 8px 0 16px;
+    box-shadow: 0 8px 24px rgba(28,18,8,0.08);
+    z-index: 99;
+  }
+  .nav-links.open { display: flex; }
+  .nav-links li { border-bottom: 1px solid var(--border); }
+  .nav-links li:last-child { border-bottom: none; }
+  .nav-links a { display: block; padding: 14px 20px; font-size: 0.92rem; color: var(--brown); }
+
+  /* Hero */
+  .hero {
+    min-height: auto;
+  }
+  .hero-inner {
+    padding: 0 20px;
+    grid-template-columns: 1fr;
+  }
+  .hero-left {
+    padding: 48px 0 40px;
+    border-right: none;
+    border-bottom: 1px solid rgba(28,18,8,0.12);
+  }
+  .hero-title { font-size: clamp(2rem, 8vw, 2.8rem); }
+  .hero-desc { font-size: 0.95rem; max-width: 100%; }
+  .hero-actions { flex-direction: column; }
+  .hero-actions .btn { justify-content: center; }
+
+  .hero-right {
+    padding: 36px 0 48px;
+    min-height: 280px;
+  }
+  .hero-photo-slot {
+    width: 180px;
+    margin: 0 auto;
+  }
+  .hero-bg-shape { width: 240px; height: 240px; top: -30px; right: -30px; }
+
+  /* Sezioni */
+  .section { padding: 56px 20px; }
+  .webtelling-section { padding: 56px 20px; }
+  .portfolio-section { padding: 56px 20px; }
+  .blog-section { padding: 56px 20px; }
+  .cta-section { padding: 56px 20px; }
+  .ornament { padding: 0 20px; }
+
+  /* Griglie → colonna singola */
+  .two-col {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .wt-layout {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .portfolio-header {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .blog-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .portfolio-header p { text-align: left; }
+
+  /* Servizi */
+  .services-grid { grid-template-columns: 1fr; }
+
+  /* CTA */
+  .cta-inner { padding: 0 4px; }
+  .cta-title { font-size: clamp(1.8rem, 7vw, 2.4rem); }
+  .cta-actions { flex-direction: column; align-items: center; }
+
+  /* Footer */
+  footer {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+    padding: 32px 20px;
+  }
+  .footer-links { flex-wrap: wrap; justify-content: center; gap: 16px; }
+
+  /* Tools */
+  .hero-tools { gap: 6px; }
+
+  /* Proposal note */
+  .proposal-note { font-size: 0.65rem; padding: 6px 14px; top: 10px; }
+}
+
+/* ── COOKIE NOTICE ── */
+#cookie-notice {
+  position: fixed;
+  bottom: 24px; left: 50%;
+  transform: translateX(-50%);
+  background: var(--brown);
+  color: rgba(255,255,255,0.85);
+  padding: 14px 20px;
+  border-radius: 12px;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  max-width: min(600px, calc(100vw - 32px));
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+  z-index: 9999;
+  transition: opacity 0.3s, transform 0.3s;
+}
+#cookie-notice.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-50%) translateY(12px);
+}
+#cookie-notice a {
+  color: var(--yellow);
+  text-decoration: none;
+  font-weight: 600;
+  white-space: nowrap;
+}
+#cookie-notice a:hover { text-decoration: underline; }
+#cookie-close {
+  background: rgba(255,255,255,0.12);
+  border: none;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 7px 16px;
+  border-radius: 100px;
+  cursor: pointer;
+  white-space: nowrap;
+  font-family: var(--sans);
+  transition: background 0.2s;
+  flex-shrink: 0;
+}
+#cookie-close:hover { background: rgba(255,255,255,0.22); }
+@media (max-width: 640px) {
+  #cookie-notice { bottom: 16px; flex-direction: column; align-items: flex-start; gap: 12px; }
+}
+</style>
+</head>
+<body>
+
+<div class="proposal-note">Mix — Eleganza editoriale + Personalità calda</div>
+
+<!-- ── COOKIE NOTICE ── -->
+<div id="cookie-notice" role="status" aria-live="polite">
+  <span>Questo sito non usa cookie di profilazione né sistemi di tracciamento. I font sono serviti localmente. <a href="privacy-policy.html#cookie">Informativa →</a></span>
+  <button id="cookie-close" aria-label="Chiudi avviso cookie">Ho capito</button>
+</div>
+
+<!-- ── NAV ── -->
+<nav>
+  <a href="index.html" class="nav-logo"><em>Chiara</em><span class="nav-logo-sym">◆</span>Bandelloni</a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="#consulenza">Consulenza</a></li>
+      <li><a href="https://chiarabandelloni.substack.com/" target="_blank" rel="noopener">Webtelling</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="blog/index.html">Blog</a></li>
+    </ul>
+    <div class="nav-social">
+      <a href="https://www.linkedin.com/in/chiarabandelloni/" target="_blank" rel="noopener" class="nav-social-link" aria-label="LinkedIn">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      </a>
+      <a href="https://www.youtube.com/@webtelling" target="_blank" rel="noopener" class="nav-social-link" aria-label="YouTube">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+      </a>
+    </div>
+    <a href="contattami.html" class="nav-cta">Contattami</a>
+    <button class="nav-search-btn" aria-label="Cerca nel sito">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    </button>
+    <button class="nav-hamburger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero">
+<div class="hero-inner">
+
+  <div class="hero-left">
+    <p class="eyebrow">digital learning design &amp; consulenza</p>
+
+    <h1 class="hero-title">
+      La formazione digitale<br>
+      che <span class="highlight">funziona davvero</span><br>
+      <em>inizia prima dei contenuti.</em>
+    </h1>
+
+    <p class="hero-desc">
+      Aiuto le aziende a capire cosa serve, prima di aprire qualsiasi strumento. Dalla strategia formativa alla supervisione dei corsi, fino allo sviluppo: porto la competenza in instructional design che spesso manca internamente.
+    </p>
+
+    <div class="hero-actions">
+      <a href="#contattami" class="btn btn-primary">Parliamo del tuo progetto →</a>
+      <a href="#portfolio" class="btn btn-outline">Portfolio</a>
+    </div>
+
+    <div class="hero-tools">
+      <span class="tool-tag">Storyline 360</span>
+      <span class="tool-tag">Rise 360</span>
+      <span class="tool-tag">SCORM / xAPI</span>
+      <span class="tool-tag">Instructional Design</span>
+      <span class="tool-tag">AI-based learning</span>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <!-- ornamento circolare -->
+    <svg class="hero-bg-shape" viewBox="0 0 360 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="180" cy="180" r="170" stroke="#1c1208" stroke-width="1.5"/>
+      <circle cx="180" cy="180" r="120" stroke="#1c1208" stroke-width="1.5"/>
+      <circle cx="180" cy="180" r="70" stroke="#1c1208" stroke-width="1.5"/>
+      <line x1="10" y1="180" x2="350" y2="180" stroke="#1c1208" stroke-width="1"/>
+      <line x1="180" y1="10" x2="180" y2="350" stroke="#1c1208" stroke-width="1"/>
+    </svg>
+
+    <!-- foto -->
+    <div class="hero-photo-slot">
+      <img src="bio.jpg" alt="Chiara Bandelloni — Instructional Designer">
+    </div>
+
+  </div>
+
+</div>
+</section>
+
+<!-- ── COSA FACCIO ── -->
+<section class="section" id="consulenza">
+  <div class="container">
+
+    <p class="section-label">cosa faccio</p>
+    <h2 class="section-title">Due modi<br><em>per lavorare insieme.</em></h2>
+
+    <div class="services-grid">
+
+      <div class="service-card">
+        <div class="service-num">01</div>
+        <div class="service-tag">Consulenza e-learning</div>
+        <div class="service-title">La competenza in instructional design che non sempre è possibile avere internamente.</div>
+        <ul class="service-list">
+          <li>Analisi della situazione formativa</li>
+          <li>Strutturazione della strategia e-learning</li>
+          <li>Supervisione dei corsi in sviluppo o produzione</li>
+        </ul>
+        <a href="#contattami" class="btn btn-ghost" style="padding-left:0">Scrivimi →</a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-num">02</div>
+        <div class="service-tag">Sviluppo e-learning</div>
+        <div class="service-title">Dalla progettazione didattica al corso pronto per il tuo LMS.</div>
+        <ul class="service-list">
+          <li>Progettazione del percorso didattico</li>
+          <li>Produzione con Storyline 360, Rise e altri tool</li>
+          <li>Output SCORM / xAPI pronti per LMS</li>
+        </ul>
+        <a href="#portfolio" class="btn btn-ghost" style="padding-left:0">Guarda il portfolio →</a>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ornamento -->
+<div class="ornament">
+  <div class="ornament-line"></div>
+  <div class="ornament-shape"></div>
+  <div class="ornament-line"></div>
+</div>
+
+<!-- ── WEBTELLING ── -->
+<section class="webtelling-section" id="webtelling">
+  <div class="container">
+
+    <p class="section-label">il progetto webtelling</p>
+    <h2 class="wt-title">
+      La lente dell'instructional design<br>
+      <em>applicata alla comunicazione digitale.</em>
+    </h2>
+
+    <div class="wt-layout">
+      <div>
+        <div class="wt-body">
+          <p>Webtelling è il mio progetto indipendente. Qui scrivo di come il digitale ci cambia: nei modi in cui impariamo, comunichiamo e creiamo. Con la lente di chi progetta apprendimento e la applica su se stessa in tempo reale.</p>
+        </div>
+        <a href="https://chiarabandelloni.substack.com/subscribe" target="_blank" rel="noopener" class="btn btn-yellow">Iscriviti alla newsletter →</a>
+      </div>
+
+      <div class="wt-channels">
+        <a href="https://chiarabandelloni.substack.com/" target="_blank" rel="noopener" class="wt-channel">
+          <div class="wt-ch-dot"></div>
+          <div class="wt-ch-name">Newsletter</div>
+          <div class="wt-ch-arrow">→</div>
+        </a>
+        <a href="https://pod.link/1866186133" target="_blank" rel="noopener" class="wt-channel">
+          <div class="wt-ch-dot"></div>
+          <div class="wt-ch-name">Podcast</div>
+          <div class="wt-ch-arrow">→</div>
+        </a>
+        <a href="https://www.youtube.com/@webtelling" target="_blank" rel="noopener" class="wt-channel">
+          <div class="wt-ch-dot"></div>
+          <div class="wt-ch-name">YouTube</div>
+          <div class="wt-ch-arrow">→</div>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── PORTFOLIO ── -->
+<section class="portfolio-section" id="portfolio">
+  <div class="container">
+
+    <div class="portfolio-header">
+      <div>
+        <p class="section-label">portfolio</p>
+        <h2 class="section-title" style="margin-bottom:0">Il lavoro,<br><em>nel concreto.</em></h2>
+      </div>
+      <p>Corsi e-learning sviluppati con Articulate e un progetto in corso con il mio cliente principale.</p>
+    </div>
+
+    <div class="portfolio-grid">
+      <a href="corsi-elearning.html" class="p-card">
+        <div class="p-card-cat">Corsi e-learning</div>
+        <div class="p-card-title">Gamification, responsive design e micro-interazioni con voce sintetica.</div>
+        <p class="p-card-desc">Tre demo sviluppate con Articulate Storyline e Rise per contesti e pubblici diversi.</p>
+        <div class="p-card-link">Esplora le demo →</div>
+      </a>
+      <a href="https://salesknowledgefactory.it/" class="p-card" target="_blank" rel="noopener">
+        <div class="p-card-cat">Progetto</div>
+        <div class="p-card-title">Sales Knowledge Factory</div>
+        <p class="p-card-desc">In Sales Knowledge Factory mi occupo di tutta la parte formativa digitale, per trasformare la conoscenza commerciale in risorse accessibili a tutto il team di vendita.</p>
+        <div class="p-card-link">Vai al progetto →</div>
+      </a>
+    </div>
+
+    <div style="margin-top:40px; display:flex; justify-content:center;">
+      <a href="Curriculum-Vitae.pdf" download class="btn btn-yellow">↓ Scarica il mio CV</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── BLOG PREVIEW ── -->
+<section class="blog-section" id="blog">
+  <div class="container">
+    <p class="section-label">dal blog</p>
+    <h2 class="section-title">Ultime letture,<br><em>appunti sulla formazione digitale.</em></h2>
+
+    <div class="blog-grid">
+
+      <a href="blog/microlearning-guida-completa.html" class="p-card">
+        <div class="p-card-cat">Guida</div>
+        <div class="p-card-title">Microlearning: cos'è, come funziona e quando usarlo davvero</div>
+        <div class="p-card-link">Leggi l'articolo →</div>
+      </a>
+
+      <a href="blog/quanto-costa-corso-elearning-domanda-sbagliata.html" class="p-card">
+        <div class="p-card-cat">Consulenza</div>
+        <div class="p-card-title">Quanto costa un corso e-learning? La domanda (spesso) sbagliata</div>
+        <div class="p-card-link">Leggi l'articolo →</div>
+      </a>
+
+      <a href="blog/piattaforma-elearning-engagement-non-basta.html" class="p-card">
+        <div class="p-card-cat">Riflessioni</div>
+        <div class="p-card-title">Nuova piattaforma e-learning, stesso engagement: cosa manca</div>
+        <div class="p-card-link">Leggi l'articolo →</div>
+      </a>
+
+    </div>
+
+    <div class="blog-section-footer">
+      <a href="blog/index.html" class="btn btn-outline">Vai al blog →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section class="cta-section" id="contattami">
+  <div class="cta-inner">
+    <div class="cta-label">✦ iniziamo</div>
+    <h2 class="cta-title">
+      Hai un progetto<br>
+      <em>da raccontarmi?</em>
+    </h2>
+    <p class="cta-body">
+      Che si tratti di impostare una strategia formativa o di sviluppare corsi, scrivimi. Capiremo insieme cosa ti serve e come posso aiutarti.
+    </p>
+    <div class="cta-actions">
+      <a href="contattami.html" class="btn btn-primary">Scrivimi →</a>
+      <a href="#portfolio" class="btn btn-yellow">Guarda il portfolio</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <a href="index.html" class="footer-logo"><em>Chiara</em><span class="footer-logo-sym">◆</span>Bandelloni</a>
+  <ul class="footer-links">
+    <li><a href="#consulenza">Consulenza</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="blog/index.html">Blog</a></li>
+    <li><a href="contattami.html">Contattami</a></li>
+  </ul>
+  <div class="footer-social">
+    <a href="https://www.linkedin.com/in/chiarabandelloni/" target="_blank" rel="noopener" class="footer-social-link" aria-label="LinkedIn">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+    </a>
+    <a href="https://www.youtube.com/@webtelling" target="_blank" rel="noopener" class="footer-social-link" aria-label="YouTube">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+    </a>
+  </div>
+</footer>
+
+<script>
+// Cookie notice
+(function(){
+  var notice = document.getElementById('cookie-notice');
+  var close  = document.getElementById('cookie-close');
+  if (!notice || !close) return;
+  if (localStorage.getItem('cookie-ok')) {
+    notice.classList.add('hidden');
+    return;
+  }
+  close.addEventListener('click', function(){
+    notice.classList.add('hidden');
+    localStorage.setItem('cookie-ok', '1');
+  });
+})();
+
+// Hamburger nav
+(function(){
+  var btn = document.querySelector('.nav-hamburger');
+  var menu = document.querySelector('.nav-links');
+  if (!btn || !menu) return;
+  btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    var open = btn.classList.toggle('open');
+    menu.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open);
+  });
+  document.addEventListener('click', function(e){
+    if (!btn.contains(e.target) && !menu.contains(e.target)){
+      btn.classList.remove('open');
+      menu.classList.remove('open');
+      btn.setAttribute('aria-expanded','false');
+    }
+  });
+  menu.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      btn.classList.remove('open');
+      menu.classList.remove('open');
+      btn.setAttribute('aria-expanded','false');
+    });
+  });
+})();
+</script>
+<script src="search.js"></script>
+</body>
+</html>
