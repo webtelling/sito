@@ -34,6 +34,7 @@ body {
   font-size: 17px;
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 /* ─────────────────────────────────────────
@@ -857,27 +858,6 @@ footer {
   color: rgba(255,255,255,0.2);
 }
 
-/* ─────────────────────────────────────────
-   NOTA PROPOSTA
-───────────────────────────────────────── */
-.proposal-note {
-  position: fixed;
-  top: 20px; left: 50%;
-  transform: translateX(-50%);
-  background: var(--brown);
-  color: var(--yellow);
-  padding: 8px 20px;
-  border-radius: 100px;
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  z-index: 999;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-  pointer-events: none;
-  font-family: var(--sans);
-  white-space: nowrap;
-}
 
 /* ── SOCIAL ICONS NAV ── */
 .nav-right {
@@ -1074,8 +1054,6 @@ footer {
   /* Tools */
   .hero-tools { gap: 6px; }
 
-  /* Proposal note */
-  .proposal-note { font-size: 0.65rem; padding: 6px 14px; top: 10px; }
 }
 
 /* ── COOKIE NOTICE ── */
@@ -1131,7 +1109,6 @@ footer {
 </head>
 <body>
 
-<div class="proposal-note">Mix — Eleganza editoriale + Personalità calda</div>
 
 <!-- ── COOKIE NOTICE ── -->
 <div id="cookie-notice" role="status" aria-live="polite">
