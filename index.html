@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Proposta Mix — Chiara Bandelloni</title>
+<title>Chiara Bandelloni — Instructional Designer</title>
 <link rel="stylesheet" href="fonts/fonts.css">
 <link rel="stylesheet" href="search.css">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -914,6 +914,9 @@ footer {
 }
 .footer-social-link:hover { color: rgba(255,255,255,0.85); }
 
+/* ── MOBILE-ONLY NAV ITEMS ── */
+.nav-links-mobile-only { display: none; }
+
 /* ── HAMBURGER ── */
 .nav-hamburger {
   display: none;
@@ -972,6 +975,9 @@ footer {
   /* Nav */
   nav { padding: 0 20px; height: 60px; }
   .nav-hamburger { display: flex; }
+  .nav-cta { display: none; }
+  .nav-social { display: none; }
+  .nav-links-mobile-only { display: block; }
   .nav-links {
     display: none;
     position: fixed;
@@ -1142,6 +1148,7 @@ footer {
       <li><a href="https://chiarabandelloni.substack.com/" target="_blank" rel="noopener">Webtelling</a></li>
       <li><a href="#portfolio">Portfolio</a></li>
       <li><a href="blog/index.html">Blog</a></li>
+      <li class="nav-links-mobile-only"><a href="contattami.html">Contattami</a></li>
     </ul>
     <div class="nav-social">
       <a href="https://www.linkedin.com/in/chiarabandelloni/" target="_blank" rel="noopener" class="nav-social-link" aria-label="LinkedIn">
