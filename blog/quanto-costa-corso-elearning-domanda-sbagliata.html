@@ -33,6 +33,7 @@ body {
   font-size: 17px;
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 /* ── NAV ── */
@@ -392,7 +393,7 @@ footer {
 @media (max-width: 640px) {
   nav { padding: 0 20px; height: 60px; }
   .nav-hamburger { display: flex; }
-  .nav-social { display: none; }
+  .nav-social { display: none; } .nav-cta { display: none; } .nav-links-mobile-only { display: block; }
   .nav-links { display: none; position: fixed; top: 60px; left: 0; right: 0; flex-direction: column; gap: 0; background: var(--warm-white); border-bottom: 1px solid var(--border); padding: 8px 0 16px; box-shadow: 0 8px 24px rgba(28,18,8,0.08); z-index: 99; }
   .nav-links.open { display: flex; }
   .nav-links li { border-bottom: 1px solid var(--border); }

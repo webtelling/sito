@@ -32,6 +32,7 @@ body {
   font-size: 17px;
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 /* ── NAV ── */
@@ -84,6 +85,7 @@ nav {
 .nav-social-link:hover { color: var(--brown); }
 .nav-cta { background: var(--yellow); color: var(--brown); font-size: 0.8rem; font-weight: 700; padding: 9px 20px; border-radius: 100px; text-decoration: none; transition: background 0.2s; white-space: nowrap; }
 .nav-cta:hover { background: var(--brown); color: var(--yellow); }
+.nav-links-mobile-only { display: none; }
 .footer-social { display: flex; align-items: center; gap: 16px; }
 .footer-social-link { color: rgba(255,255,255,0.35); display: flex; align-items: center; text-decoration: none; transition: color 0.2s; }
 .footer-social-link:hover { color: rgba(255,255,255,0.85); }
@@ -386,6 +388,9 @@ footer {
   .nav-links li { border-bottom: 1px solid var(--border); }
   .nav-links li:last-child { border-bottom: none; }
   .nav-links a { display: block; padding: 14px 20px; font-size: 0.92rem; color: var(--brown); }
+  .nav-cta { display: none; }
+  .nav-social { display: none; }
+  .nav-links-mobile-only { display: block; }
   .page-header { padding: 40px 20px 52px; }
   .form-section { padding: 48px 20px 64px; }
   .form-row { grid-template-columns: 1fr; }
