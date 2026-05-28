@@ -352,6 +352,27 @@ nav {
   color: var(--muted);
 }
 
+#form-success {
+  padding: 48px 0;
+}
+.form-success-title {
+  font-family: var(--serif);
+  font-size: 1.6rem;
+  color: var(--brown);
+  margin-bottom: 12px;
+}
+.form-success-text {
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+#form-error {
+  display: none;
+  margin-top: 12px;
+  font-size: 0.85rem;
+  color: #c0392b;
+}
+
 /* ── FOOTER ── */
 footer {
   background: var(--dark-bg);
@@ -510,17 +531,13 @@ footer {
     </aside>
 
     <!-- form -->
-    <!--
-      SETUP FORMSPREE:
-      1. Registrati su formspree.io
-      2. Crea un nuovo form e copia il tuo endpoint
-      3. Sostituisci "https://formspree.io/f/TUOCODICE" qui sotto
-    -->
     <form
       class="contact-form"
-      action="https://formspree.io/f/mredgrqw"
+      name="contatto"
       method="POST"
+      data-netlify="true"
     >
+      <input type="hidden" name="form-name" value="contatto">
       <div class="form-row">
         <div class="field">
           <label for="nome">Nome *</label>
@@ -561,8 +578,13 @@ footer {
       <div class="form-submit">
         <button type="submit" class="btn-submit">Invia il messaggio →</button>
       </div>
+      <div id="form-error">Si è verificato un errore. Riprova o scrivimi direttamente a webtelling@gmail.com.</div>
 
     </form>
+    <div id="form-success">
+      <p class="form-success-title">Messaggio inviato.</p>
+      <p class="form-success-text">Ho ricevuto la tua richiesta — ti rispondo appena posso, di solito entro 24–48 ore.</p>
+    </div>
   </div>
 </section>
 
@@ -585,6 +607,43 @@ footer {
   </div>
 </footer>
 
+<script>
+// Netlify form AJAX submit
+(function(){
+  var form = document.querySelector('.contact-form');
+  var success = document.getElementById('form-success');
+  var error   = document.getElementById('form-error');
+  if (!form || !success) return;
+  success.style.display = 'none';
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var btn = form.querySelector('.btn-submit');
+    btn.textContent = 'Invio in corso…';
+    btn.disabled = true;
+    error.style.display = 'none';
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(new FormData(form)).toString()
+    })
+    .then(function(res){
+      if (res.ok) {
+        form.style.display = 'none';
+        success.style.display = 'block';
+      } else {
+        btn.textContent = 'Invia il messaggio →';
+        btn.disabled = false;
+        error.style.display = 'block';
+      }
+    })
+    .catch(function(){
+      btn.textContent = 'Invia il messaggio →';
+      btn.disabled = false;
+      error.style.display = 'block';
+    });
+  });
+})();
+</script>
 <script>
 (function(){
   var btn = document.querySelector('.nav-hamburger');
