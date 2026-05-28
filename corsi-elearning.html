@@ -452,6 +452,49 @@ footer {
   .cta-section { padding: 56px 20px; }
   footer { padding: 28px 20px; flex-direction: column; align-items: flex-start; gap: 16px; }
 }
+#cookie-notice {
+  position: fixed;
+  bottom: 24px; left: 50%;
+  transform: translateX(-50%);
+  background: var(--brown);
+  color: rgba(255,255,255,0.85);
+  padding: 14px 20px;
+  border-radius: 12px;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  max-width: min(600px, calc(100vw - 32px));
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+  z-index: 9999;
+  transition: opacity 0.3s, transform 0.3s;
+}
+#cookie-notice.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-50%) translateY(12px);
+}
+#cookie-notice a { color: var(--yellow); text-decoration: none; font-weight: 600; white-space: nowrap; }
+#cookie-notice a:hover { text-decoration: underline; }
+#cookie-close {
+  background: rgba(255,255,255,0.12);
+  border: none;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 7px 16px;
+  border-radius: 100px;
+  cursor: pointer;
+  white-space: nowrap;
+  font-family: var(--sans);
+  transition: background 0.2s;
+  flex-shrink: 0;
+}
+#cookie-close:hover { background: rgba(255,255,255,0.22); }
+@media (max-width: 640px) {
+  #cookie-notice { bottom: 16px; flex-direction: column; align-items: flex-start; gap: 12px; }
+}
 </style>
 </head>
 <body>
@@ -575,6 +618,22 @@ footer {
   </div>
 </footer>
 
+<div id="cookie-notice" role="status" aria-live="polite">
+  <span>Questo sito non usa cookie di profilazione né sistemi di tracciamento. I font sono serviti localmente. <a href="privacy-policy.html#cookie">Informativa →</a></span>
+  <button id="cookie-close" aria-label="Chiudi avviso cookie">Ho capito</button>
+</div>
+<script>
+(function(){
+  var notice = document.getElementById('cookie-notice');
+  var close  = document.getElementById('cookie-close');
+  if (!notice || !close) return;
+  if (localStorage.getItem('cookie-ok')) { notice.classList.add('hidden'); return; }
+  close.addEventListener('click', function(){
+    notice.classList.add('hidden');
+    localStorage.setItem('cookie-ok', '1');
+  });
+})();
+</script>
 <script src="search.js"></script>
 </body>
 </html>
