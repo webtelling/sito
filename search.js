@@ -12,6 +12,12 @@
       url: r + 'blog/microlearning-guida-completa.html'
     },
     {
+      title: "Imparare a imparare non è un modo di dire",
+      category: 'Riflessioni',
+      excerpt: "Imparare a imparare è diventata la meta-competenza che decide il valore di tutte le altre. Cosa significa, e perché la staticità è un rischio.",
+      url: r + 'blog/imparare-a-imparare-meta-competenza.html'
+    },
+    {
       title: "Quanto costa un corso e-learning? La domanda (spesso) sbagliata",
       category: 'Consulenza',
       excerpt: "Prima del budget, viene l'analisi. Cosa vuoi cambiare? In chi? Perché un corso è la risposta giusta e non un altro strumento?",
