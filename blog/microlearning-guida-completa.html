@@ -55,7 +55,7 @@ nav { position: sticky; top: 0; z-index: 100; background: var(--warm-white); bor
 .back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 0.75rem; font-weight: 600; color: rgba(28,18,8,0.5); text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 40px; transition: color 0.2s; }
 .back-link:hover { color: var(--brown); }
 .post-category { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(28,18,8,0.45); display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
-.post-category::before { content: ''; display: block; width: 24px; height: 2px; background: rgba(28,18,8,0.3); flex-shrink: 0; }
+.post-category::before { content: ''; display: block; width: 9px; height: 9px; background: var(--brown); transform: rotate(45deg); flex-shrink: 0; }
 h1 { font-family: var(--serif); font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 400; line-height: 1.1; letter-spacing: -0.025em; color: var(--brown); margin-bottom: 20px; }
 .post-meta { font-size: 0.8rem; color: rgba(28,18,8,0.45); font-weight: 500; }
 
@@ -105,7 +105,7 @@ h1 { font-family: var(--serif); font-size: clamp(2rem, 3.5vw, 3rem); font-weight
 .post-related { background: var(--cream); border-top: 1px solid var(--border); padding: 56px 52px; }
 .post-related-inner { max-width: 720px; margin: 0 auto; }
 .related-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); display: flex; align-items: center; gap: 12px; margin-bottom: 28px; }
-.related-label::before { content: ''; display: block; width: 24px; height: 2px; background: var(--yellow); flex-shrink: 0; }
+.related-label::before { content: ''; display: block; width: 9px; height: 9px; background: var(--yellow); transform: rotate(45deg); flex-shrink: 0; }
 .related-card { display: flex; align-items: flex-start; gap: 24px; padding: 24px; background: var(--warm-white); border: 1px solid var(--border); border-radius: 10px; text-decoration: none; color: inherit; transition: border-color 0.2s, box-shadow 0.2s; }
 .related-card:hover { border-color: rgba(255,198,42,0.5); box-shadow: 0 6px 24px rgba(28,18,8,0.06); }
 .related-arrow { width: 36px; height: 36px; background: var(--yellow); border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
