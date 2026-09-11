@@ -6,6 +6,12 @@
   // ── Indice dei contenuti ──────────────────────────────────────
   const DATA = [
     {
+      title: "Salvare contenuti non \u00e8 imparare: la trappola della disponibilit\u00e0",
+      category: 'Riflessioni',
+      excerpt: "Salvare un contenuto d\u00e0 quasi la stessa soddisfazione di averlo letto. Perch\u00e9 succede, e come progettare formazione che vada oltre il pulsante salva.",
+      url: r + 'blog/salvare-contenuti-non-e-imparare.html'
+    },
+    {
       title: "Microlearning: cos'è, come funziona e quando usarlo davvero",
       category: 'Guida',
       excerpt: "Non è solo fare le cose brevi. Il microlearning funziona quando è focalizzato su un solo comportamento alla volta, con una strategia dietro.",
@@ -25,7 +31,7 @@
     },
     {
       title: "Valutazione della formazione: misuriamo i risultati, ma sappiamo da dove partiamo?",
-      category: 'Formazione',
+      category: 'Guida',
       excerpt: "Valutiamo sempre i risultati della formazione, ma quasi mai misuriamo da dove partivamo. L'analisi baseline cambia tutto.",
       url: r + 'blog/misurare-efficacia-formazione-baseline.html'
     },
