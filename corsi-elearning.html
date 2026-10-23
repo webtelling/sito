@@ -31,6 +31,7 @@
   --cream:         #f2ece0;
   --muted:         #6b5f4e;
   --border:        #e4d9c8;
+  --sage:        #5f7057;
   --dark-bg:       #1a1008;
   --serif:         'DM Serif Display', Georgia, serif;
   --sans:          'DM Sans', system-ui, sans-serif;
@@ -109,350 +110,152 @@ nav {
 .footer-social-link { color: rgba(255,255,255,0.35); display: flex; align-items: center; text-decoration: none; transition: color 0.2s; }
 .footer-social-link:hover { color: rgba(255,255,255,0.85); }
 
-/* ── PAGE HEADER (giallo, compatto) ── */
-.page-header {
-  background: var(--yellow);
-  padding: 72px 52px 80px;
+/* ─────────────────────────────────────────
+   LAYOUT COMUNE
+───────────────────────────────────────── */
+.wrap { max-width: 1280px; margin: 0 auto; padding: 0 48px; }
+.block { padding-top: 140px; }
+
+.h-section {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(2rem, 3.4vw, 2.75rem);
+  line-height: 1.12;
 }
 
-.page-header-inner {
-  max-width: 1400px;
-  margin: 0 auto;
+.note {
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--sage);
+  line-height: 1.3;
 }
 
-.back-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 0.78rem;
+.text-link {
+  color: var(--brown);
   font-weight: 600;
-  color: rgba(28,18,8,0.5);
-  text-decoration: none;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  margin-bottom: 48px;
-  transition: color 0.2s;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 5px;
 }
-.back-link:hover { color: var(--brown); }
+.text-link:hover { text-decoration-thickness: 2px; }
 
-.section-label {
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: rgba(28,18,8,0.45);
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 20px;
-}
-.section-label::before {
-  content: '';
-  display: block;
-  width: 9px; height: 9px;
+.btn-dark {
+  display: inline-block;
+  padding: 16px 28px;
   background: var(--brown);
-  transform: rotate(45deg);
-  flex-shrink: 0;
+  color: var(--warm-white);
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  border: 1.5px solid var(--brown);
+  transition: background 0.2s, color 0.2s;
 }
+.btn-dark:hover { background: transparent; color: var(--brown); }
 
+/* ─────────────────────────────────────────
+   TESTATA PAGINA
+───────────────────────────────────────── */
+.page-head { padding-top: 72px; }
+.page-kicker { font-size: 0.9rem; color: var(--muted); margin-bottom: 28px; }
+.page-kicker::first-letter { text-transform: uppercase; }
 .page-title {
   font-family: var(--serif);
-  font-size: clamp(2.4rem, 4vw, 3.8rem);
   font-weight: 400;
-  line-height: 1.08;
-  letter-spacing: -0.025em;
-  color: var(--brown);
-  margin-bottom: 20px;
+  font-size: clamp(2.6rem, 5.6vw, 4.5rem);
+  line-height: 1.04;
+  letter-spacing: -0.015em;
+  max-width: 14em;
 }
-.page-title em {
-  font-style: italic;
-  color: rgba(28,18,8,0.52);
-}
+.page-desc { margin-top: 32px; max-width: 34em; font-size: 1.15rem; color: #3d3226; }
+.block-first { padding-top: 96px; }
 
-.page-subtitle {
-  font-size: 1rem;
-  color: rgba(28,18,8,0.6);
-  max-width: 520px;
-  line-height: 1.7;
+/* ─────────────────────────────────────────
+   CHIUSURA
+───────────────────────────────────────── */
+.contact {
+  padding-top: 160px; padding-bottom: 128px;
+  display: flex; flex-wrap: wrap; gap: 32px 72px; align-items: flex-end;
 }
-
-/* ── DEMOS SECTION ── */
-.demos-section {
-  padding: 80px 52px 96px;
+.contact-text { flex: 7 1 520px; min-width: 0; }
+.contact-title {
+  font-family: var(--serif); font-weight: 400;
+  font-size: clamp(2.6rem, 6vw, 5rem); line-height: 1.02; letter-spacing: -0.015em;
 }
+.contact-text p:not(.page-kicker) { margin: 28px 0 32px; max-width: 32em; color: #3d3226; }
+.contact-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 32px; }
 
-.demos-inner {
-  max-width: 1400px;
-  margin: 0 auto;
-}
-
-/* testo intro libero */
-.intro-text {
-  max-width: 600px;
+/* ─────────────────────────────────────────
+   DEMO
+───────────────────────────────────────── */
+.demos-intro {
+  display: flex; flex-wrap: wrap; gap: 24px 72px; align-items: flex-end; justify-content: space-between;
   margin-bottom: 64px;
 }
+.demos-intro p { flex: 1 1 420px; max-width: 36em; color: #3d3226; }
+.demo-grid { display: flex; flex-wrap: wrap; gap: 56px 40px; }
+.demo { flex: 1 1 300px; min-width: 0; border-top: 2px solid var(--brown); padding-top: 20px; display: flex; flex-direction: column; align-items: flex-start; }
+.demo .note { font-size: 1.25rem; margin-bottom: 10px; }
+.demo-title { font-family: var(--serif); font-weight: 400; font-size: 2.1rem; line-height: 1.15; }
+.demo-tool { margin-top: 6px; font-size: 0.9rem; color: var(--muted); }
+.demo-desc { margin: 20px 0 24px; color: #3d3226; flex: 1; }
 
-.intro-text p {
-  font-size: 1rem;
-  color: var(--muted);
-  line-height: 1.8;
-  margin-bottom: 28px;
-}
-
-.intro-text .btn-yellow:hover {
-  background: transparent;
-  color: var(--brown);
-  border-color: var(--brown);
-}
-
-/* griglia demo */
-.demos-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-
-.demo-card {
-  background: var(--warm-white);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  transition: border-color 0.22s, box-shadow 0.22s, transform 0.22s;
-}
-
-.demo-card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 3px;
-  background: var(--yellow);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.3s;
-  z-index: 1;
-}
-.demo-card:hover::before { transform: scaleX(1); }
-.demo-card:hover {
-  border-color: rgba(255,198,42,0.4);
-  box-shadow: 0 12px 40px rgba(28,18,8,0.08);
-  transform: translateY(-3px);
-}
-
-/* area visiva superiore */
-.demo-visual {
-  background: var(--yellow-pale);
-  height: 160px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-bottom: 1px solid var(--border);
-  position: relative;
-}
-
-.demo-visual-title {
-  font-family: var(--serif);
-  font-size: 1.55rem;
-  font-style: italic;
-  font-weight: 400;
-  color: var(--brown);
-  line-height: 1.15;
-  text-align: center;
-  padding: 0 24px;
-  transition: opacity 0.22s;
-}
-.demo-card:hover .demo-visual-title { opacity: 0.75; }
-
-.demo-tool {
-  position: absolute;
-  bottom: 12px; right: 14px;
-  background: var(--yellow);
-  color: var(--brown);
-  font-size: 0.62rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  padding: 4px 10px;
-  border-radius: 100px;
-}
-
-/* corpo della card */
-.demo-body {
-  padding: 28px 28px 32px;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
-
-.demo-category {
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--muted);
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 12px;
-}
-.demo-category::before {
-  content: '';
-  display: block;
-  width: 8px; height: 8px;
-  background: var(--yellow);
-  transform: rotate(45deg);
-  flex-shrink: 0;
-}
-
-.demo-title {
-  font-family: var(--serif);
-  font-size: 1.4rem;
-  font-weight: 400;
-  line-height: 1.2;
-  color: var(--brown);
-  margin-bottom: 12px;
-}
-
-.demo-desc {
-  font-size: 0.875rem;
-  color: var(--muted);
-  line-height: 1.65;
-  flex: 1;
-  margin-bottom: 28px;
-}
-
-/* BTN */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 11px 22px;
-  font-family: var(--sans);
-  font-size: 0.85rem;
-  font-weight: 600;
-  text-decoration: none;
-  border: 2px solid transparent;
-  border-radius: 100px;
-  transition: all 0.22s;
-  cursor: pointer;
-}
-.btn-primary {
-  background: var(--brown);
-  color: var(--yellow);
-  border-color: var(--brown);
-}
-.btn-primary:hover { background: transparent; color: var(--brown); border-color: var(--brown); }
-
-.btn-outline {
-  background: transparent;
-  color: var(--brown);
-  border-color: var(--border);
-}
-.btn-outline:hover { border-color: var(--brown); }
-
-.btn-yellow {
-  background: var(--yellow);
-  color: var(--brown);
-  border-color: var(--yellow);
-  border-radius: 100px;
-}
-.btn-yellow:hover { background: transparent; color: var(--yellow); }
-
-/* ── CTA ── */
-.cta-section {
-  padding: 96px 52px;
-  border-top: 1px solid var(--border);
-  text-align: center;
-}
-
-.cta-inner { max-width: 560px; margin: 0 auto; }
-
-.cta-label {
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin-bottom: 20px;
-}
-
-.cta-title {
-  font-family: var(--serif);
-  font-size: clamp(2rem, 3.5vw, 3rem);
-  font-weight: 400;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-  color: var(--brown);
-  margin-bottom: 20px;
-}
-.cta-title em { font-style: italic; color: var(--muted); }
-
-.cta-body {
-  font-size: 0.95rem;
-  color: var(--muted);
-  line-height: 1.7;
-  margin-bottom: 36px;
-}
-
-.cta-actions { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
-
-/* ── FOOTER ── */
+/* ─────────────────────────────────────────
+   FOOTER
+───────────────────────────────────────── */
 footer {
-  background: var(--dark-bg);
+  background: var(--brown);
   padding: 40px 52px;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  gap: 24px;
+  align-items: center;
 }
 
 .footer-logo {
   font-family: var(--serif);
-  font-size: 1.05rem;
-  color: rgba(255,255,255,0.65);
+  font-size: 1rem;
+  color: rgba(255,255,255,0.85);
   text-decoration: none;
+  font-weight: 400;
 }
-.footer-logo em { font-style: italic; color: rgba(255,255,255,0.35); font-weight: 400; }
+.footer-logo em { font-style: italic; color: rgba(255,255,255,0.6); font-weight: 400; }
 .footer-logo-sym { color: var(--yellow); padding: 0 2px; font-style: normal; font-size: 0.82em; vertical-align: middle; }
 
 .footer-links {
-  display: flex;
-  gap: 24px;
-  list-style: none;
+  display: flex; gap: 24px; list-style: none;
 }
-
 .footer-links a {
-  font-size: 0.78rem;
-  color: rgba(255,255,255,0.4);
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.65);
   text-decoration: none;
   transition: color 0.2s;
 }
-.footer-links a:hover { color: rgba(255,255,255,0.75); }
+.footer-links a:hover { color: #fff; }
+
+.footer-copy {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.6);
+}
+
 
 /* ── RESPONSIVE ── */
 @media (max-width: 1024px) {
   nav { padding: 0 24px; }
-  .page-header { padding: 56px 32px 64px; }
-  .demos-section { padding: 64px 32px 80px; }
-  .cta-section { padding: 72px 32px; }
+  .wrap { padding-left: 32px; padding-right: 32px; }
+  .block { padding-top: 112px; }
   footer { padding: 32px; }
 }
-
-@media (max-width: 900px) {
-  .demos-grid { grid-template-columns: 1fr 1fr; }
-  .intro-note { flex-direction: column; align-items: flex-start; gap: 20px; }
-}
-
 @media (max-width: 640px) {
   nav { padding: 0 20px; height: 60px; }
   .nav-links { display: none; }
-  .page-header { padding: 40px 20px 52px; }
-  .demos-section { padding: 48px 20px 64px; }
-  .demos-grid { grid-template-columns: 1fr; }
-  .cta-section { padding: 56px 20px; }
-  footer { padding: 28px 20px; flex-direction: column; align-items: flex-start; gap: 16px; }
+  .demo-title { font-size: 1.75rem; }
+  .wrap { padding-left: 20px; padding-right: 20px; }
+  .block { padding-top: 88px; }
+  .block-first { padding-top: 64px; }
+  .page-head { padding-top: 40px; }
+  .page-desc { font-size: 1rem; }
+  .contact { padding-top: 100px; padding-bottom: 80px; }
+  footer { flex-direction: column; gap: 20px; text-align: center; padding: 32px 20px; }
+  .footer-links { flex-wrap: wrap; justify-content: center; gap: 16px; }
 }
 #cookie-notice {
   position: fixed;
@@ -523,83 +326,67 @@ footer {
   </div>
 </nav>
 
-<!-- ── PAGE HEADER ── -->
-<div class="page-header">
-  <div class="page-header-inner">
-    <p class="section-label">portfolio</p>
+<main>
+
+<!-- ── TESTATA ── -->
+<div class="wrap">
+  <header class="page-head">
+    <p class="page-kicker">portfolio</p>
     <h1 class="page-title">Corsi e-learning</h1>
-    <p class="page-subtitle">Tre demo, tre approcci: dalla gamification ai corsi responsivi, fino alle micro-interazioni con voce sintetica.</p>
-  </div>
+    <p class="page-desc">Tre demo, tre approcci: dalla gamification ai corsi responsivi, fino alle micro-interazioni con voce sintetica.</p>
+  </header>
 </div>
 
-<!-- ── DEMO CARDS ── -->
-<section class="demos-section">
-  <div class="demos-inner">
+<!-- ── DEMO ── -->
+<section class="wrap block-first">
+  <div class="demos-intro">
+    <p>Questi corsi sono stati sviluppati per mostrare approcci e strumenti diversi all'e-learning. Non si tratta di portfolio clienti: sono esempi progettati per dimostrare le possibilità tecniche e didattiche di Articulate Storyline e Rise.</p>
+    <a href="index.html#contattami" class="btn-dark">Parliamo del tuo progetto →</a>
+  </div>
 
-    <div class="intro-text">
-      <p>Questi corsi sono stati sviluppati per mostrare approcci e strumenti diversi all'e-learning. Non si tratta di portfolio clienti: sono esempi progettati per dimostrare le possibilità tecniche e didattiche di Articulate Storyline e Rise.</p>
-      <a href="index.html#contattami" class="btn btn-yellow">Parliamo del tuo progetto →</a>
-    </div>
+  <div class="demo-grid">
 
-    <div class="demos-grid">
+    <article class="demo">
+      <p class="note">Gamification</p>
+      <h2 class="demo-title">Eco-trivial</h2>
+      <p class="demo-tool">Storyline 360</p>
+      <p class="demo-desc">Un gioco ispirato al Trivial per mostrare il potenziale della gamification nei percorsi formativi. Meccaniche di gioco, feedback immediato e apprendimento attivo.</p>
+      <a href="https://360.articulate.com/review/content/ee4c6c6f-78fc-4eea-8318-d9b625f65929/review" class="text-link" target="_blank" rel="noopener">Apri la demo →</a>
+    </article>
 
-      <div class="demo-card">
-        <div class="demo-visual">
-          <span class="demo-visual-title">Eco-trivial</span>
-          <span class="demo-tool">Storyline 360</span>
-        </div>
-        <div class="demo-body">
-          <div class="demo-category">Gamification</div>
-          <p class="demo-desc">Un gioco ispirato al Trivial per mostrare il potenziale della gamification nei percorsi formativi. Meccaniche di gioco, feedback immediato e apprendimento attivo.</p>
-          <a href="https://360.articulate.com/review/content/ee4c6c6f-78fc-4eea-8318-d9b625f65929/review" class="btn btn-primary" target="_blank" rel="noopener">Apri la demo →</a>
-        </div>
-      </div>
+    <article class="demo">
+      <p class="note">Responsive design</p>
+      <h2 class="demo-title">Risparmio energetico</h2>
+      <p class="demo-tool">Rise 360</p>
+      <p class="demo-desc">Layout responsivo, interazioni native di Rise, elementi multimediali e un'interazione 360° sviluppata in Storyline e integrata nel corso.</p>
+      <a href="https://share.articulate.com/tkcgL4jj8Xh-jfC9clSXJ" class="text-link" target="_blank" rel="noopener">Apri la demo →</a>
+    </article>
 
-      <div class="demo-card">
-        <div class="demo-visual">
-          <span class="demo-visual-title">Risparmio energetico</span>
-          <span class="demo-tool">Rise 360</span>
-        </div>
-        <div class="demo-body">
-          <div class="demo-category">Responsive design</div>
-          <p class="demo-desc">Layout responsivo, interazioni native di Rise, elementi multimediali e un'interazione 360° sviluppata in Storyline e integrata nel corso.</p>
-          <a href="https://share.articulate.com/tkcgL4jj8Xh-jfC9clSXJ" class="btn btn-primary" target="_blank" rel="noopener">Apri la demo →</a>
-        </div>
-      </div>
+    <article class="demo">
+      <p class="note">Micro-interazioni</p>
+      <h2 class="demo-title">Guida Audacity</h2>
+      <p class="demo-tool">Storyline 360</p>
+      <p class="demo-desc">Corso in inglese sull'uso del software Audacity. Micro-interazioni, feedback personalizzati e voce sintetica integrata direttamente in Storyline.</p>
+      <a href="https://360.articulate.com/review/content/674be7fe-a5dd-4197-b17e9284bb6036bd/review" class="text-link" target="_blank" rel="noopener">Apri la demo →</a>
+    </article>
 
-      <div class="demo-card">
-        <div class="demo-visual">
-          <span class="demo-visual-title">Guida Audacity</span>
-          <span class="demo-tool">Storyline 360</span>
-        </div>
-        <div class="demo-body">
-          <div class="demo-category">Micro-interazioni</div>
-          <p class="demo-desc">Corso in inglese sull'uso del software Audacity. Micro-interazioni, feedback personalizzati e voce sintetica integrata direttamente in Storyline.</p>
-          <a href="https://360.articulate.com/review/content/674be7fe-a5dd-4197-b17e9284bb6036bd/review" class="btn btn-primary" target="_blank" rel="noopener">Apri la demo →</a>
-        </div>
-      </div>
-
-    </div>
   </div>
 </section>
 
 <!-- ── CTA ── -->
-<section class="cta-section">
-  <div class="cta-inner">
-    <div class="cta-label">✦ iniziamo</div>
-    <h2 class="cta-title">
-      Hai un progetto<br>
-      <em>da raccontarmi?</em>
-    </h2>
-    <p class="cta-body">
-      Che si tratti di impostare una strategia formativa o di sviluppare corsi, scrivimi. Capiremo insieme cosa ti serve e come posso aiutarti.
-    </p>
-    <div class="cta-actions">
-      <a href="contattami.html" class="btn btn-primary">Scrivimi →</a>
-      <a href="index.html#portfolio" class="btn btn-outline">Torna al portfolio</a>
+<section class="wrap contact">
+  <div class="contact-text">
+    <p class="page-kicker">iniziamo</p>
+    <h2 class="contact-title">Hai un progetto da raccontarmi?</h2>
+    <p>Che si tratti di impostare una strategia formativa o di sviluppare corsi, scrivimi. Capiremo insieme cosa ti serve e come posso aiutarti.</p>
+    <div class="contact-actions">
+      <a href="contattami.html" class="btn-dark">Scrivimi →</a>
+      <a href="index.html#portfolio" class="text-link">Torna al portfolio</a>
     </div>
   </div>
 </section>
+
+</main>
 
 <!-- ── FOOTER ── -->
 <footer>
@@ -610,6 +397,7 @@ footer {
     <li><a href="blog/index.html">Blog</a></li>
     <li><a href="contattami.html">Contattami</a></li>
   </ul>
+  <p class="footer-copy">Nessun tracciamento, font serviti localmente. <a href="privacy-policy.html" style="color:inherit">Privacy</a></p>
   <div class="footer-social">
     <a href="https://www.linkedin.com/in/chiarabandelloni/" target="_blank" rel="noopener" class="footer-social-link" aria-label="LinkedIn">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
