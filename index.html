@@ -297,15 +297,30 @@ nav {
   display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline;
   gap: 16px; margin-bottom: 32px;
 }
-.blog-list { border-bottom: 1px solid var(--border); }
-.blog-row {
-  display: flex; flex-wrap: wrap; gap: 4px 48px;
-  padding: 26px 0; border-top: 1px solid var(--border);
+.blog-grid { display: flex; flex-wrap: wrap; gap: 24px; }
+.blog-card {
+  flex: 1 1 300px; min-width: 0; min-height: 300px;
+  position: relative; overflow: hidden;
+  display: flex; flex-direction: column; justify-content: flex-end; gap: 12px;
+  padding: 32px;
+  background: var(--cream); border: 1px solid var(--border);
   color: var(--brown); text-decoration: none;
+  transition: border-color 0.2s;
 }
-.blog-row .note { flex: 0 0 180px; font-size: 1.25rem; }
-.blog-row-title { flex: 1 1 520px; font-family: var(--serif); font-size: 1.75rem; line-height: 1.25; }
-.blog-row:hover .blog-row-title { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 6px; }
+.blog-card:hover { border-color: var(--brown); }
+.blog-card > * { position: relative; }
+.blog-cat { font-family: var(--serif); font-style: italic; font-size: 1.25rem; color: var(--sage); }
+.blog-title { font-family: var(--serif); font-size: 1.75rem; line-height: 1.2; }
+.blog-more { font-size: 0.92rem; font-weight: 600; }
+.blog-card:hover .blog-more { text-decoration: underline; text-underline-offset: 5px; }
+/* copertina facoltativa: classe has-cover + <img class="blog-cover"> come primo elemento */
+.blog-card .blog-cover { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.blog-card.has-cover::before {
+  content: ''; position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(to top, rgba(28,18,8,0.92) 0%, rgba(28,18,8,0.65) 45%, rgba(28,18,8,0.1) 100%);
+}
+.blog-card.has-cover > :not(.blog-cover) { z-index: 2; color: var(--warm-white); }
+.blog-card.has-cover .blog-cat { color: var(--yellow); }
 
 /* ─────────────────────────────────────────
    CONTATTI
@@ -475,8 +490,8 @@ footer {
   .webtelling { margin-top: 100px; }
   .webtelling .wrap { padding-top: 64px; padding-bottom: 72px; }
   .wt-channel { font-size: 1.4rem; }
-  .blog-row .note { flex-basis: 100%; }
-  .blog-row-title { font-size: 1.4rem; }
+  .blog-card { min-height: 240px; padding: 24px; }
+  .blog-title { font-size: 1.4rem; }
   .contact { padding-top: 100px; padding-bottom: 80px; }
 
   /* Footer */
@@ -669,7 +684,7 @@ footer {
     <div class="case-cols">
       <div class="case-col">
         <p class="note">La sfida</p>
-        <p>Rendere la conoscenza di un’organizzazione accessibile a tutte le persone che ci lavorano.</p>
+        <p>Collegare la formazione ai risultati di business, in organizzazioni di ogni dimensione.</p>
       </div>
       <div class="case-col">
         <p class="note">Il mio ruolo</p>
@@ -677,7 +692,7 @@ footer {
       </div>
       <div class="case-col">
         <p class="note">I formati</p>
-        <p>E-learning, spaced learning e contenuti AI-driven.</p>
+        <p>Piattaforme e-learning, spaced learning e AI Guided Learning su contenuti proprietari.</p>
       </div>
     </div>
     <p class="case-small">I materiali di progetto sono riservati: qui racconto il ruolo e il metodo.</p>
@@ -726,18 +741,22 @@ footer {
     <h2 class="h-section">Appunti sulla formazione digitale.</h2>
     <a href="blog/index.html" class="text-link">Tutto il blog →</a>
   </div>
-  <div class="blog-list">
-    <a href="blog/microlearning-guida-completa.html" class="blog-row">
-      <span class="note">Guida</span>
-      <span class="blog-row-title">Microlearning: cos’è, come funziona e quando usarlo davvero</span>
+  <!-- Per aggiungere una copertina: classe "has-cover" sul box e <img class="blog-cover" src="..." alt=""> come primo elemento -->
+  <div class="blog-grid">
+    <a href="blog/microlearning-guida-completa.html" class="blog-card">
+      <span class="blog-cat">Guida</span>
+      <span class="blog-title">Microlearning: cos’è, come funziona e quando usarlo davvero</span>
+      <span class="blog-more">Leggi l’articolo →</span>
     </a>
-    <a href="blog/quanto-costa-corso-elearning-domanda-sbagliata.html" class="blog-row">
-      <span class="note">Consulenza</span>
-      <span class="blog-row-title">Quanto costa un corso e-learning? La domanda (spesso) sbagliata</span>
+    <a href="blog/quanto-costa-corso-elearning-domanda-sbagliata.html" class="blog-card">
+      <span class="blog-cat">Consulenza</span>
+      <span class="blog-title">Quanto costa un corso e-learning? La domanda (spesso) sbagliata</span>
+      <span class="blog-more">Leggi l’articolo →</span>
     </a>
-    <a href="blog/piattaforma-elearning-engagement-non-basta.html" class="blog-row">
-      <span class="note">Riflessioni</span>
-      <span class="blog-row-title">Nuova piattaforma e-learning, stesso engagement: cosa manca</span>
+    <a href="blog/piattaforma-elearning-engagement-non-basta.html" class="blog-card">
+      <span class="blog-cat">Riflessioni</span>
+      <span class="blog-title">Nuova piattaforma e-learning, stesso engagement: cosa manca</span>
+      <span class="blog-more">Leggi l’articolo →</span>
     </a>
   </div>
 </section>
