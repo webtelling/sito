@@ -194,7 +194,8 @@ nav {
 .demos-intro p { flex: 1 1 420px; max-width: 36em; color: #3d3226; }
 .demo-grid { display: flex; flex-wrap: wrap; gap: 56px 40px; }
 .demo { flex: 1 1 300px; min-width: 0; border-top: 2px solid var(--brown); padding-top: 20px; display: flex; flex-direction: column; align-items: flex-start; }
-.demo-shot { display: block; width: 100%; height: auto; border: 1px solid var(--border); margin-bottom: 24px; }
+.demo-shot { display: block; width: 100%; height: auto; aspect-ratio: 2160 / 1294; object-fit: cover; object-position: center; border: 1px solid var(--border); margin-bottom: 24px; }
+.demo-shot--audacity { object-position: center 60%; }
 .demo .note { font-size: 1.25rem; margin-bottom: 10px; }
 .demo-title { font-family: var(--serif); font-weight: 400; font-size: 2.1rem; line-height: 1.15; }
 .demo-tool { margin-top: 6px; font-size: 0.9rem; color: var(--muted); }
@@ -366,7 +367,7 @@ footer {
     </article>
 
     <article class="demo">
-      <img src="img/guida-audacity.jpg" alt="Guida Audacity, spiegazione del salvataggio del progetto" class="demo-shot" width="1200" height="922" loading="lazy">
+      <img src="img/guida-audacity.jpg" alt="Guida Audacity, spiegazione del salvataggio del progetto" class="demo-shot demo-shot--audacity" width="1200" height="922" loading="lazy">
       <p class="note">Micro-interazioni</p>
       <h2 class="demo-title">Guida Audacity</h2>
       <p class="demo-tool">Storyline 360</p>
