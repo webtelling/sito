@@ -252,18 +252,25 @@ nav {
    PORTFOLIO
 ───────────────────────────────────────── */
 .portfolio .h-section { margin-bottom: 56px; }
-.case-head {
-  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline;
-  gap: 8px 32px; margin-bottom: 32px;
-}
 .case-title { font-family: var(--serif); font-weight: 400; font-size: 2.1rem; line-height: 1.15; }
-.case-head:has(.case-logo) { align-items: flex-end; }
-.case-logo { display: block; width: 200px; height: auto; }
-.case-cols { display: flex; flex-wrap: wrap; gap: 32px 40px; }
-.case-col { flex: 1 1 300px; border-top: 2px solid var(--brown); padding-top: 20px; }
-.case-col .note { font-size: 1.25rem; margin-bottom: 10px; }
-.case-col p:last-child { font-family: var(--serif); font-size: 1.75rem; line-height: 1.25; }
-.case-small { margin-top: 28px; font-size: 0.9rem; color: var(--muted); }
+
+.case-impact {
+  display: flex; flex-direction: row-reverse; flex-wrap: wrap; gap: 32px 64px; align-items: flex-start;
+}
+.case-impact-text { flex: 5 1 320px; min-width: 0; }
+.case-impact-text .case-title { margin-bottom: 12px; }
+.case-impact-text > p:first-of-type { color: #3d3226; margin-bottom: 24px; }
+.case-impact figure {
+  flex: 7 1 520px; min-width: 0;
+  display: flex; align-items: center; justify-content: center;
+  aspect-ratio: 2160 / 1294; background: #000;
+}
+.case-impact figure img { display: block; width: 42%; height: auto; }
+.impact-list { list-style: none; margin-bottom: 24px; border-bottom: 1px solid var(--border); }
+.impact-list li { padding: 12px 0; border-top: 1px solid var(--border); }
+.impact-list .note { display: block; font-size: 1.1rem; }
+.impact-list .impact-value { display: block; font-family: var(--serif); font-size: 1.25rem; line-height: 1.3; }
+.case-small { margin-top: 16px; font-size: 0.85rem; color: var(--muted); }
 
 .case-demo {
   display: flex; flex-wrap: wrap; gap: 32px 64px; align-items: flex-start;
@@ -511,7 +518,6 @@ footer {
   .wt-channel { font-size: 1.4rem; }
   .blog-card { min-height: 240px; padding: 24px; }
   .blog-title { font-size: 1.4rem; }
-  .case-logo { width: 160px; }
   .contact { padding-top: 100px; padding-bottom: 80px; }
 
   /* Footer */
@@ -693,26 +699,20 @@ footer {
 <section class="wrap block portfolio" id="portfolio">
   <h2 class="h-section">Portfolio.</h2>
 
-  <article>
-    <div class="case-head">
-      <h3 class="case-title"><img src="img/impact-learning-factory-logo.png" alt="Impact Learning Factory" class="case-logo" width="788" height="673"></h3>
+  <article class="case-impact">
+    <figure>
+      <img src="img/impact-learning-factory-logo.png" alt="Impact Learning Factory" width="788" height="673">
+    </figure>
+    <div class="case-impact-text">
+      <h3 class="case-title">Impact Learning Factory</h3>
+      <p>Collegare la formazione ai risultati di business, in organizzazioni di ogni dimensione.</p>
+      <ul class="impact-list">
+        <li><span class="note">Il mio ruolo</span><span class="impact-value">Curo tutta la parte formativa digitale del progetto.</span></li>
+        <li><span class="note">I formati</span><span class="impact-value">Piattaforme e-learning, spaced learning e AI Guided Learning su contenuti proprietari.</span></li>
+      </ul>
       <a href="https://impactlearningfactory.it/" target="_blank" rel="noopener" class="text-link">Vai al progetto →</a>
+      <p class="case-small">I materiali di progetto sono riservati: qui racconto il ruolo e il metodo.</p>
     </div>
-    <div class="case-cols">
-      <div class="case-col">
-        <p class="note">La sfida</p>
-        <p>Collegare la formazione ai risultati di business, in organizzazioni di ogni dimensione.</p>
-      </div>
-      <div class="case-col">
-        <p class="note">Il mio ruolo</p>
-        <p>Curo tutta la parte formativa digitale del progetto.</p>
-      </div>
-      <div class="case-col">
-        <p class="note">I formati</p>
-        <p>Piattaforme e-learning, spaced learning e AI Guided Learning su contenuti proprietari.</p>
-      </div>
-    </div>
-    <p class="case-small">I materiali di progetto sono riservati: qui racconto il ruolo e il metodo.</p>
   </article>
 
   <article class="case-demo">
