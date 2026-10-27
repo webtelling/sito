@@ -141,3 +141,20 @@
   #search-overlay { padding: 60px 16px 16px; }
   #search-kbd { display: none; }
 }
+
+/* ── SOTTOLINEATURA A MANO ── */
+.swoosh {
+  white-space: nowrap;
+  padding-bottom: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 14' preserveAspectRatio='none'%3E%3Cpath d='M3 10 C 45 3, 120 2, 197 8' fill='none' stroke='%23ffc62a' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-size: 100% 0.32em;
+}
+.swoosh-dark {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 14' preserveAspectRatio='none'%3E%3Cpath d='M3 10 C 45 3, 120 2, 197 8' fill='none' stroke='%231c1208' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E");
+}
+@media (prefers-reduced-motion: no-preference) {
+  .swoosh-anim .swoosh { background-size: 0% 0.32em; transition: background-size 0.6s ease-out; }
+  .swoosh-anim .swoosh.drawn { background-size: 100% 0.32em; }
+}

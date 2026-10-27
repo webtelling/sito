@@ -220,15 +220,33 @@ nav {
 /* ─────────────────────────────────────────
    SERVIZI
 ───────────────────────────────────────── */
-.services { display: flex; flex-wrap: wrap; gap: 40px 72px; }
-.services > .h-section { flex: 4 1 280px; }
-.services-cols { flex: 8 1 640px; min-width: 0; display: flex; flex-wrap: wrap; gap: 48px; }
-.service { flex: 1 1 280px; border-top: 2px solid var(--brown); padding-top: 24px; }
-.service-name { font-size: 0.92rem; font-weight: 600; margin-bottom: 6px; }
-.service-claim { font-family: var(--serif); font-size: 1.6rem; line-height: 1.25; margin-bottom: 24px; }
-.service-list { list-style: none; margin-bottom: 20px; border-bottom: 1px solid var(--border); }
-.service-list li { padding: 10px 0; border-top: 1px solid var(--border); }
-.service .note { font-size: 1.25rem; margin-bottom: 20px; }
+#consulenza > .h-section { margin-bottom: 48px; }
+.services { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.service { display: flex; flex-direction: column; padding: 48px; background: var(--cream); color: var(--brown); }
+.service-name { font-size: 0.9rem; font-weight: 600; margin-bottom: 8px; }
+.service-claim { font-family: var(--serif); font-size: 2rem; line-height: 1.2; margin-bottom: 28px; }
+.service-list { list-style: none; margin-bottom: 28px; }
+.service-list li { position: relative; padding-left: 26px; margin: 10px 0; }
+.service-list li::before { content: "\25C6"; position: absolute; left: 0; top: 0.15em; color: var(--yellow); font-size: 0.8rem; }
+.service .note { margin-top: auto; padding-top: 24px; border-top: 1px solid rgba(28,18,8,.15); font-size: 1.3rem; margin-bottom: 28px; }
+.service .btn-dark, .service .btn-yellow { align-self: flex-start; }
+.service-dark { background: var(--brown); color: var(--warm-white); }
+.service-dark .service-name { color: var(--yellow); }
+.service-dark .note { color: #e8dcc4; border-top-color: rgba(250,248,243,.2); }
+.btn-yellow {
+  display: inline-block;
+  padding: 16px 28px;
+  background: var(--yellow);
+  color: var(--brown);
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  border: 1.5px solid var(--yellow);
+  transition: background 0.2s, color 0.2s;
+}
+.btn-yellow:hover { background: transparent; color: var(--yellow); }
+@media (max-width: 900px) { .services { grid-template-columns: 1fr; } }
+@media (max-width: 640px) { .service { padding: 28px; } }
 
 /* ─────────────────────────────────────────
    PORTFOLIO
@@ -604,7 +622,7 @@ footer {
   <section class="hero">
     <div class="hero-text">
       <p class="hero-kicker">Instructional designer freelance, digital learning design e consulenza</p>
-      <h1 class="hero-title">La formazione digitale che funziona davvero inizia prima dei contenuti.</h1>
+      <h1 class="hero-title">La formazione digitale che funziona davvero inizia <span class="swoosh">prima dei contenuti</span>.</h1>
       <p class="hero-desc">Aiuto le aziende a capire cosa serve, prima di aprire qualsiasi strumento. Dalla strategia formativa alla supervisione dei corsi, fino allo sviluppo: porto la competenza in instructional design che spesso manca internamente.</p>
       <a href="#contattami" class="btn-dark">Parliamo del tuo progetto →</a>
     </div>
@@ -617,7 +635,7 @@ footer {
 
 <!-- ── METODO ── -->
 <section class="wrap block" id="metodo">
-  <h2 class="h-section method-title">Come lavoro: si parte dal bisogno, non dallo strumento.</h2>
+  <h2 class="h-section method-title">Come lavoro: si parte <span class="swoosh">dal bisogno</span>, non dallo strumento.</h2>
   <div class="method-steps">
     <div class="method-step first">
       <p class="method-num">1</p>
@@ -644,38 +662,36 @@ footer {
 
 <!-- ── COSA FACCIO ── -->
 <section class="wrap block" id="consulenza">
+  <h2 class="h-section">Due modi per lavorare <span class="swoosh">con me</span>.</h2>
   <div class="services">
-    <h2 class="h-section">Due modi per lavorare insieme.</h2>
-    <div class="services-cols">
-      <div class="service">
-        <h3 class="service-name">Consulenza e-learning</h3>
-        <p class="service-claim">La competenza in instructional design che non sempre è possibile avere internamente.</p>
-        <ul class="service-list">
-          <li>Analisi della situazione formativa</li>
-          <li>Strutturazione della strategia e-learning</li>
-          <li>Supervisione dei corsi in sviluppo o produzione</li>
-        </ul>
-        <p class="note">Quando un corso c’è già, ma non funziona come dovrebbe.</p>
-        <a href="#contattami" class="text-link">Scrivimi</a>
-      </div>
-      <div class="service">
-        <h3 class="service-name">Sviluppo e-learning</h3>
-        <p class="service-claim">Dalla progettazione didattica al corso pronto per il tuo LMS.</p>
-        <ul class="service-list">
-          <li>Progettazione del percorso didattico</li>
-          <li>Produzione con Storyline 360, Rise e altri tool</li>
-          <li>Output SCORM / xAPI pronti per LMS</li>
-        </ul>
-        <p class="note">Quando il corso va costruito da zero.</p>
-        <a href="#portfolio" class="text-link">Guarda il portfolio</a>
-      </div>
+    <div class="service">
+      <h3 class="service-name">Consulenza e-learning</h3>
+      <p class="service-claim">La competenza in instructional design che non sempre è possibile avere internamente.</p>
+      <ul class="service-list">
+        <li>Analisi della situazione formativa</li>
+        <li>Strutturazione della strategia e-learning</li>
+        <li>Supervisione dei corsi in sviluppo o produzione</li>
+      </ul>
+      <p class="note">Quando un corso c’è già, ma non funziona come dovrebbe.</p>
+      <a href="#contattami" class="btn-dark">Scrivimi →</a>
+    </div>
+    <div class="service service-dark">
+      <h3 class="service-name">Sviluppo e-learning</h3>
+      <p class="service-claim">Dalla progettazione didattica al corso pronto per il tuo LMS.</p>
+      <ul class="service-list">
+        <li>Progettazione del percorso didattico</li>
+        <li>Produzione con Storyline 360, Rise e altri tool</li>
+        <li>Output SCORM / xAPI pronti per LMS</li>
+      </ul>
+      <p class="note">Quando il corso va costruito da zero.</p>
+      <a href="#portfolio" class="btn-yellow">Guarda il portfolio →</a>
     </div>
   </div>
 </section>
 
 <!-- ── PORTFOLIO ── -->
 <section class="wrap block portfolio" id="portfolio">
-  <h2 class="h-section">Il lavoro, nel concreto.</h2>
+  <h2 class="h-section">Portfolio.</h2>
 
   <article>
     <div class="case-head">
@@ -764,7 +780,7 @@ footer {
 <!-- ── CTA ── -->
 <section class="wrap contact" id="contattami">
   <div class="contact-text">
-    <h2 class="contact-title">Hai un progetto da raccontarmi?</h2>
+    <h2 class="contact-title">Hai un <span class="swoosh">progetto</span> da raccontarmi?</h2>
     <p>Che si tratti di impostare una strategia formativa o di sviluppare corsi, scrivimi. Capiremo insieme cosa ti serve e come posso aiutarti.</p>
     <a href="contattami.html" class="btn-dark">Scrivimi →</a>
   </div>

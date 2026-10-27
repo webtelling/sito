@@ -184,3 +184,17 @@
 
   window.openSiteSearch = open;
 })();
+
+// ── Sottolineatura a mano: si disegna quando entra nella vista ──
+(function () {
+  var els = document.querySelectorAll('.swoosh');
+  if (!els.length || !('IntersectionObserver' in window)) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  document.documentElement.classList.add('swoosh-anim');
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add('drawn'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.6 });
+  els.forEach(function (el) { io.observe(el); });
+})();
